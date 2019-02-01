@@ -28,3 +28,23 @@ Eg: you can say ` am start package-name ` it will start the paticular package.
 Eg:  `am start -a android.intent.action.VIEW http://attify.com` will open and Browser and open attify.com
 
 
+One can simply try to bypass the login and other security features but calling the authorized activities directly using
+intents.
+
+## Content Providers
+
+Which saves/shares the data
+Eg: sql,xml etc
+
+## Shared Prefrecnces
+
+Simple way of storing some inforamtion for the appilication 
+Like GameHighScore,username and etc
+Its a XML file
+its inside is `shared_pref` folder
+
+## Broad Case Receaver
+
+Its like an event listener on an android app 
+Which wait for action/event to trigger and it executes its block of code in response.
+
