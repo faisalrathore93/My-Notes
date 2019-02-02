@@ -150,3 +150,38 @@ After Getting the PID
 adb logcat | grep PID
 
 ```
+
+# Log based bugs
+
+Android Apps can store Sensitive information in the logs which can be Accessed by other apps.
+
+## How to Find Log based Bugs
+
+- Watching the Logs
+- Using Source code
+
+### Watching the Logs
+
+One can try to see if any logs are being created with any sensitive information about the user
+```
+adb ps grep facebook
+abd logcat | grep PID
+```
+
+### Checking The Sorce code
+- Using ApkToll decompiler
+- Using Jadx
+
+```
+Using APKTOOL:
+
+apktool -d facebook.apk -d FaceBook
+grep -iRn 'log.d' .
+
+
+Using Jadx
+
+jadx facebook.apk -d Facebook
+grep -iRn 'log.d' .
+
+```
