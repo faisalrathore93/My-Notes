@@ -225,7 +225,7 @@ Using Burp to Intercept HTTP Traffic:
  - Change Proxy setting to your Listening Proxy on android device
  - Done!
  ```
-Using Burp to Intercept HTTP Traffic:
+Using Burp to Intercept HTTP's Traffic:
  ```
 - Go to Android Device
 - Open http://burp in browser
@@ -245,4 +245,28 @@ Using Burp to Intercept HTTP Traffic:
  After Performing these steps you maybe able to intercept the HTTP's Traffic.
  
  
+ # Testing Content Providers
  
+ - The content Providers are like an medium between an app and the data sources.
+ - These needs to be searched inside the source code of an app
+ - They always start with content://
+ 
+They can be found by fallowing these steps
+```
+- Pull the app from the android
+
+adb shell pm path com.android.package
+
+- Decompile it
+
+apktool d app.apk
+
+- grep the content Providers
+
+grep -iRn 'content://'
+
+- query it
+
+adb shell content query --url content://example
+```
+
