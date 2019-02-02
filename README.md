@@ -77,3 +77,76 @@ Or You can use 010 Editor and use the DEX templet to decode the classes.dex file
 - 
 
 ```
+
+# Glimps of ADB
+
+Decompile an APP
+```
+apktool d app.apk
+```
+
+Building an APP
+```
+apktool b app.apk
+```
+
+Start an ADB server
+```
+adb start-server
+```
+
+Stop an ADB Server
+```
+adb start-server
+```
+
+Connect to Android Device
+```
+adb connect 192.168.43.101
+```
+
+Push a file to Android
+```
+adb push localfile.txt /mnt/sdcard/file.txt`
+```
+
+Pull a file from Android
+```
+adb pull /mnt/sdcard/secret.txt
+```
+
+Execute Commands without getting shell
+```
+adb shell ls /mnt/sdcard
+```
+
+Install APP
+```
+adb install app.apk
+```
+
+Uninstall APP
+```
+adb uninstall app.apk
+```
+
+
+Take Backup of An app
+```
+adb backup com.package.name  -f newApp.apk
+```
+
+Android LOGS
+```
+adb logcat
+```
+
+Get Logs of Paticular APP
+```
+adb ps | grep -i facebook
+
+After Getting the PID
+
+adb logcat | grep PID
+
+```
