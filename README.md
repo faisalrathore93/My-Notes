@@ -270,3 +270,57 @@ grep -iRn 'content://'
 adb shell content query --url content://example
 ```
 
+## Using Drozer
+#### Installing On PC: 
+```
+Building from Source
+git clone https://github.com/mwrlabs/drozer/
+cd drozer
+python setup.py build
+python setup.py install
+```
+#### Installing on Android
+```
+Download and Install on Addroid: https://github.com/mwrlabs/drozer/releases/download/2.3.4/drozer-agent-2.3.4.apk
+```
+
+#### Connecting Drozer
+```
+adb forward tcp:31415 tcp:31415
+drozer console connect
+```
+
+Will Give you drozer shell
+
+
+## Attacking App with Drozer
+
+Listing Packages
+```
+run app.package.list
+```
+
+
+Find Packages with name
+```
+run app.package.list -f firefox
+```
+
+
+Finding Attack surface:
+```
+run app.package.attacksurface com.package.name
+```
+
+
+Getting All content Providers
+```
+run app.provider.finduri com.package.name
+```
+
+
+Accessing the content Providers
+```
+run app.provider.query content://uri
+```
+
