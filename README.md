@@ -346,7 +346,18 @@ Here is How to do it.
 4
 5
 ```
+# Accessable Content Provides pathPrefix:"/"
 
+Sometimes the Content provider can be protected by the permission but always look at the additional paremeters to check if
+the app is vulnerable Ex: 
+
+As you can see here the entire file system has access to the contents of the app.
+
+```
+<provider android:authorities="com.dropbox.andriod.dropbox" android:name".provider.DropboxProvider">
+<grant-uri-permission:android:pathPrefix="/" />
+
+```
 
 # Bugs
 ### Weak Traffic Over HTTP
