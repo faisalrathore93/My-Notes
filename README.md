@@ -333,6 +333,20 @@ Checking Directory traversal
 run app.provider.query content://uri../../../../secret.txt
 ```
 
+# CSIP Vulnerability
+
+Sometimes Developers can set permissions to the content://providers but they forget to apply the signatures. Which may 
+result that contetn Url can be called by other appilication and steal the APP data.
+
+Here is How to do it.
+```
+1
+2
+3
+4
+5
+```
+
 
 # Bugs
 ### Weak Traffic Over HTTP
@@ -363,3 +377,7 @@ Check if its vulnerable to Directory traversal
 run app.provider.query content://uri../../../../secret.txt
 ```
 
+### Secured Content Provided without Permission
+```
+Check if the developed has forgot to add signatures to the content provides
+```
