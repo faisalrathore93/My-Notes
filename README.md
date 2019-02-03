@@ -300,6 +300,10 @@ Listing Packages
 run app.package.list
 ```
 
+Get Permission Info of an APP
+```
+run app.package.info -a com.package.name
+```
 
 Find Packages with name
 ```
@@ -322,5 +326,40 @@ run app.provider.finduri com.package.name
 Accessing the content Providers
 ```
 run app.provider.query content://uri
+```
+
+Checking Directory traversal
+```
+run app.provider.query content://uri../../../../secret.txt
+```
+
+
+# Bugs
+### Weak Traffic Over HTTP
+```
+Check if App is sending any sensitive info over HTTP
+```
+
+### Leaks in Logs
+```
+Check if App Is leaking any Data in Logs
+```
+
+### Source code
+```
+Check if Code can be decompiled 
+Check if There is any API Key or Sensitive iformation in Source Code
+```
+
+### Leaking Content Providers
+```
+Check if content providers are accessable to other apps
+```
+
+### Directory Traversal 
+```
+Check if app has read file system permission
+Check if its vulnerable to Directory traversal
+run app.provider.query content://uri../../../../secret.txt
 ```
 
