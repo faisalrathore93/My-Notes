@@ -435,8 +435,69 @@ Tracing the method
 ```
 >>method-trace com.package.name.className.methodName 
 ```
-#### Now the problem is to set the breakpoints to the app and edit the values. This can be achieved by using ADB because 
-#### AndBug doesn't support the Breakpoints
+##### Now the problem is to set the breakpoints to the app and edit the values. This can be achieved by using ADB because AndBug doesn't support the Breakpoints
+
+### Setting Up JDB
+```
+Getting Process ID of APP:
+
+adb shell ps | grep -i insecure
+
+
+
+forwading Ports:
+adb forward tcp:1337 jdwp:PID
+
+
+Attach Jdb to app:
+jdb -attach localhost:1337
+```
+
+### Some JDB Commands
+
+Tracing classes
+```
+>>classes
+```
+
+Tracing Methods of classes
+```
+>>methods com.package.name.className
+```
+
+
+Setting BreakPoints
+```
+stop in com.android.packageName.ClassName.MethodName
+```
+
+##### Editing Variables During BreakPoints
+
+Checking Local Varibale
+```
+locals
+```
+
+Setting Local Varibales
+```
+set amount="20000"
+```
+
+
+Resuming the thread
+```
+resume
+```
+
+Calling any method during BreakPoint
+```
+eval dotransfer("192.168.56.1","8080","1111","2222","1000000")
+```
+
+
+
+
+
 
 
 
