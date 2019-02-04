@@ -386,6 +386,59 @@ Try Intercepting Traffic and pass requets to SQLMAP to check if requests are vul
 
 
 
+
+
+
+# Debugging Android Bugs
+
+lets setup an Insecure Bank App to Demonistrate the debugging of android app
+```
+git clone https://github.com/dineshshetty/Android-InsecureBankv2
+pip install "cherrypy>=3.0.8,<9.0.0"
+cd Insecure-Bank/InsecureBank/bin/
+adb install InsecreBank.apk
+
+Server:
+cd Insecure-Bank/AndroLabServer/
+python app.py
+```
+
+### using AndBug
+Get PID and PACKAGE_NAME of an APP
+```
+adb shell ps | grep -i insecure
+```
+
+Get AndBug Shell
+```
+andbug shell -p PID
+```
+
+
+Getting All classes in APP
+```
+>>classes
+```
+
+Getting classes By APP
+```
+>> classes com.android.insecurebank
+```
+
+
+Getting Method of an CLASS
+```
+methods app.class.name
+```
+
+Tracing the method
+```
+method-trace com.package.name.className.methodName 
+```
+
+
+
+
 # Bugs
 ### Weak Traffic Over HTTP
 ```
@@ -427,4 +480,9 @@ Try SQLI in Register
 Try Intercepting Traffic and pass requets to SQLMAP to check if requests are vulnerable
 ``
 
+
+#### Tracing method for Leaking data
+```
+Tarce each Intresting method to see if app is leaking any key or Any Senstive info.
+```
 
