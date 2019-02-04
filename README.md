@@ -100,13 +100,6 @@ label -- String to show while asking permission
 
 
 
-
-
-
-
-
-
-
 # Analysing DEX files
 
 - The DEX file have a magic Number of 035
@@ -135,6 +128,8 @@ Or You can use 010 Editor and use the DEX templet to decode the classes.dex file
 - 
 
 ```
+
+
 
 # Glimps of ADB
 
@@ -208,6 +203,67 @@ After Getting the PID
 adb logcat | grep PID
 
 ```
+
+# ADB Package Manager
+
+list all packages
+```
+pm list packages
+```
+
+Start packages
+```
+am start packag.name
+```
+
+Kill App
+```
+kill PID
+```
+
+# Package Resources
+
+In android All the files are located in /data/data. In these Directores You can see permissions files,databases and other
+files owned by the apps by fallowing commands.
+
+
+List all Packages
+```
+ls -al
+```
+
+list all Packages with their metedata
+```
+ls -alR */
+```
+
+
+List all packages with their databases only
+```
+ls -alR */databases/
+```
+
+
+List all packages with their Files only
+```
+ls -alR */files/
+```
+
+
+List Specific Files
+```
+ls –al */*/*.xml
+ls –al */*/*.png
+ls –al */*/*.mp3
+```
+
+
+
+
+
+
+
+
 
 # Logs In Android
 
@@ -368,6 +424,28 @@ Find Packages with name
 run app.package.list -f firefox
 ```
 
+Find Package Info
+```
+run app.package.info –-package [package name]
+```
+
+Listing Activities on Your Device
+```
+run app.activity.info
+```
+
+
+Filter Activities by Name
+```
+run app.activity.info –f facebook
+```
+
+
+Filtter activities By Package Name
+```
+run app.activity.info –-package [package name]
+```
+
 
 Finding Attack surface:
 ```
@@ -380,16 +458,53 @@ Getting All content Providers
 run app.provider.finduri com.package.name
 ```
 
+Getting All Content Providers
+```
+run app.provider.info –a [Package Name]
+```
+
+
+
+Getting All Content Providers By Permission
+```
+run app.provider.info –a [Permission Label Name]
+```
+
 
 Accessing the content Providers
 ```
 run app.provider.query content://uri
 ```
 
-Checking Directory traversal
+
+
+Get Running Services
 ```
-run app.provider.query content://uri../../../../secret.txt
+run app.service.info –-package [package name]
 ```
+
+
+
+Services Running Based on Name
+```
+run app.service.info –f [Filter string]
+```
+
+
+
+Enumerate BroadCast Receavers
+```
+run app.broadcast.info
+```
+
+
+
+Enumerate BroadCast Receavers of Any Package
+```
+run app.broadcast.info –a [package]
+```
+
+
 
 # CSIP Vulnerability
 
@@ -581,14 +696,14 @@ Check if There is any API Key or Sensitive iformation in Source Code
 Check if content providers are accessable to other apps
 ```
 
-### Directory Traversal 
+
+### Directory Traversal in Content Providers
 ```
 Check if app has read file system permission
 Check if its vulnerable to Directory traversal
 run app.provider.query content://uri../../../../secret.txt
 ```
 
-### Secured Content Provided without Permission
 ```
 Check if the developed has forgot to add signatures to the content provides
 ```
