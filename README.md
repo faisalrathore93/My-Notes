@@ -428,14 +428,15 @@ Getting classes By APP
 
 Getting Method of an CLASS
 ```
-methods app.class.name
+>>methods app.class.name
 ```
 
 Tracing the method
 ```
-method-trace com.package.name.className.methodName 
+>>method-trace com.package.name.className.methodName 
 ```
-
+#### Now the problem is to set the breakpoints to the app and edit the values. This can be achieved by using ADB because 
+#### AndBug doesn't support the Breakpoints
 
 
 
