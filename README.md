@@ -48,6 +48,64 @@ its inside is `shared_pref` folder
 Its like an event listener on an android app 
 Which wait for action/event to trigger and it executes its block of code in response.
 
+# Analysing AndroidManifest.xml
+
+Here is an example of AndroidManifest file
+```
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.aditya.webviewvuln">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.aditya.webviewvuln.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+```
+#### Permissions
+The app needs only one permission that is Android
+```
+ <uses-permission android:name="android.permission.INTERNET"/>
+
+```
+
+
+#### < appilication >
+<application> This element is used to define the beginning of an application. What's important about this
+element with regards to security is its attributes and how they can affect the components
+defined inside this element
+
+```
+<application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.aditya.webviewvuln.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+```
+
+
+####  < appilication > Attributes
+allowBackup -- The Full back of all is possible
+icon   -- path to an Drawable Icon
+label -- String to show while asking permission
+```
+<application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+
+```
+
+
+
+
+
+
+
+
+
 
 # Analysing DEX files
 
