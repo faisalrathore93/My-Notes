@@ -359,6 +359,33 @@ As you can see here the entire file system has access to the contents of the app
 
 ```
 
+# Backup Vulnerability
+
+Sometime the app allows other apps to take full backup of an app. which can be exploited by hackers
+
+Here is how to test for t
+```
+1
+2
+3
+4
+5
+6
+
+```
+
+
+
+# Testing SQL Injection Bugs
+Sometimes APPS can be vulnerable to SQLI injection
+``
+Try SQLI on Login
+Try SQLI in Register
+Try Intercepting Traffic and pass requets to SQLMAP to check if requests are vulnerable
+``
+
+
+
 # Bugs
 ### Weak Traffic Over HTTP
 ```
@@ -392,3 +419,12 @@ run app.provider.query content://uri../../../../secret.txt
 ```
 Check if the developed has forgot to add signatures to the content provides
 ```
+
+#### SQLI
+``
+Try SQLI on Login
+Try SQLI in Register
+Try Intercepting Traffic and pass requets to SQLMAP to check if requests are vulnerable
+``
+
+
