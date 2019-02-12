@@ -675,14 +675,38 @@ eval dotransfer("192.168.56.1","8080","1111","2222","1000000")
 
 
 # Bugs
+
+### Checking Logs
+
 ### Weak Traffic Over HTTP
 ```
+Open WireShark
+Open APP
+Set Start Intercepting on all the interfaces
+Filter Traffic
 Check if App is sending any sensitive info over HTTP
 ```
 
 ### Leaks in Logs
 ```
+adb logcat | grep [Cc]ookie
+adb logcat | grep "http[s]*"
+adb logcat | grep "ftp[s]*"
+adb logcat | grep [pattern]
+adb logcat | grep –i "[\w\s_-]*token[\w\s_-]*"
+
 Check if App Is leaking any Data in Logs
+```
+
+### Leaks in Logs on Hardware Events
+Sometime the app will generte some logs on hardware based event so these event can be generated bu monkey extension 
+in adb will will send -p [package_name]  random -v [No of event] to generate logs.
+
+```
+Start APP
+Start Logcat
+App Grep
+adb shell monkey –p [package] –v [event count]
 ```
 
 ### Source code
@@ -721,3 +745,31 @@ Try Intercepting Traffic and pass requets to SQLMAP to check if requests are vul
 Tarce each Intresting method to see if app is leaking any key or Any Senstive info.
 ```
 
+
+
+# Resources
+The Android Debug Bridge – Enabling logcat logging webpage at 
+https://developer.android.com/tools/help/adb.html#logcat
+
+
+The Vogella Tutorials – Monkey Testing webpage at 
+http://www.vogella.com/articles/AndroidTesting/article.html
+
+The Android Developer – logcat webpage at 
+https://developer.android.com/tools/help/logcat.html
+
+
+
+The WinGrep software at 
+http://www.wingrep.com/download.htm
+
+
+
+The Discovering a Major Security Hole in Facebook's Android SDK webpage at
+http://blog.parse.com/2012/04/10/discovering-a-major-security-hole-in-facebooks-android-sdk/
+
+
+
+
+The Android Developer – Reading and Writing Logs webpage at 
+http://developer.android.com/tools/debugging/debugging-log.html
