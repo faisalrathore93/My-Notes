@@ -325,6 +325,17 @@ apktool b Folder2
 
 ```
 
+## Signing the app
+```
+Generating Key:
+keytool -genkey -v -keystore imran.keystore -alias mubashir -keyalg RSA -keysize 2048 -validity 200
+```
+
+```
+Signing the APP:
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1  -keystore imran.keystore imran.apk alias_name mubashir
+```
+
 # Intercepting The Traffic
 
 The bugs like sending sensitive data over HTTP can be only identified when traffic is intercepted and analysed.
