@@ -504,6 +504,12 @@ Enumerate BroadCast Receavers of Any Package
 run app.broadcast.info –a [package]
 ```
 
+Launching any enumerated activity
+
+```
+run app.activity.start --action android.intent.action.MAIN --category android.intent.category.LAUNCHER --component app.packagen.name app.package.service.name
+```
+
 
 
 # CSIP Vulnerability
@@ -669,6 +675,51 @@ eval dotransfer("192.168.56.1","8080","1111","2222","1000000")
 
 
 
+## Attacking Services
+
+#### Finding services 
+```
+run app.service.info -a com.package.name
+```
+
+#### Finding Services will null permission
+This will find all the services running on your mobile with null permission
+```
+run app.services.info -p null
+```
+
+### TIP: 
+its always good to enable log cat while playing with services just to make sure any information is not diclosed
+
+#### Launching Services
+Now as we have found the serives can be launched them by using this command [make sure logcat is running]
+
+```
+ run app.service.start –-component package.name service.name
+```
+
+##### Launching Services with their intents
+if you want to send the service some data via an intent, you would need to
+know what the intent filters look like for the service you are targeting. And, if you haven't
+already guessed, the easiest way to know this is by inspecting the application manifest. 
+
+Example
+```
+<service android:name=".authenticator. AuthenticationService" android:exported="true">   <-- Here is the service name
+ <intent-filter>
+ <action android:name="android.accounts.
+ AccountAuthenitcator" />
+ </intent-filter>
+ <meta-data android:name="android. accounts.AccountAuthenticator" android:resource="@xml/authenticator" />    <--  Intent Name
+</service>
+```
+
+```
+dz> run app.service.start --component com.linkedin.android 
+com.linkedin.android.authenticator.AuthenitactionService 
+--action anroid.accounts.AccountAuthenitcator
+```
+
 
 
 
@@ -676,7 +727,25 @@ eval dotransfer("192.168.56.1","8080","1111","2222","1000000")
 
 # Bugs
 
-### Checking Logs
+### Services with Null Permissions
+```
+run app.services.info -p null -a com.box.android
+
+### TIP: 
+its always good to enable log cat while playing with services just to make sure any information is not diclosed
+```
+
+### Launching Services with null permission
+
+```
+ run app.service.start –-component package.name service.name
+```
+
+### Checking DOS via Null Services
+```
+Launch Each service and Check if you are enable to crash app By Launching that service.
+```
+
 
 ### Weak Traffic Over HTTP
 ```
