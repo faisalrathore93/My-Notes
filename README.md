@@ -738,6 +738,17 @@ com.linkedin.android.authenticator.AuthenitactionService
 
 # Bugs
 
+### Hard-coding issues
+Check Source code for sensitive information about the company.
+```
+key=
+secret=
+api=
+token=
+cookie=
+ip=
+```
+
 ### Services with Null Permissions
 ```
 run app.services.info -p null -a com.box.android
@@ -746,7 +757,7 @@ run app.services.info -p null -a com.box.android
 its always good to enable log cat while playing with services just to make sure any information is not diclosed
 ```
 
-### Launching Services with null permission
+### Launching Services with null permissionxxxxx
 
 ```
  run app.service.start –-component package.name service.name
