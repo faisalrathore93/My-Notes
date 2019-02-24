@@ -143,34 +143,7 @@ ls –al */*/*.mp3
 
 
 
-# Analysing DEX files
 
-- The DEX file have a magic Number of 035
-- The DEX file is encoded into HEX
-
-The tool called `dexdump` can be used to converting dex files
-
-Install:
-```
-echo "deb http://ftp.de.debian.org/debian sid main" > /etc/apt/sources.list
-apt-get update
-apt-get install dexdump
-```
-
-Use:
-```
-dexdump -l xml classes.dex        //Will produce and xml files of classes.dex with all classes info
-
-```
-
-Or You can use 010 Editor and use the DEX templet to decode the classes.dex files
-
-```
-- 
-- 
-- 
-
-```
 
 
 
@@ -311,7 +284,9 @@ grep -iRn 'log.d' .
 
 ```
 
-# Reverse Engineering the APP
+# Reverse Engineering
+
+## Reverse Engineering the APP
 
 There are three steps in doing that
 
@@ -336,7 +311,30 @@ apktool b Folder2
 
 ```
 
-# Signing the app
+
+
+## Analysing DEX files
+
+- The DEX file have a magic Number of 035
+- The DEX file is encoded into HEX
+
+The tool called `dexdump` can be used to converting dex files
+
+Install:
+```
+echo "deb http://ftp.de.debian.org/debian sid main" > /etc/apt/sources.list
+apt-get update
+apt-get install dexdump
+```
+
+Use:
+```
+dexdump -l xml classes.dex        //Will produce and xml files of classes.dex with all classes info
+
+```
+
+
+## Signing the app
 ```
 Generating Key:
 keytool -genkey -v -keystore imran.keystore -alias mubashir -keyalg RSA -keysize 2048 -validity 200
