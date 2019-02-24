@@ -714,28 +714,37 @@ com.linkedin.android.authenticator.AuthenitactionService
 ```
 
 
-# Attacking Vulnerable Broadcast Receivers
 
-```
-Getting breadcase Receavers 
-- From XML file
-- Using Drozer
-
-Finding the code which handles the broadcase
-- decompile the app
-- identifying the parameters to be send to breadcast receaver.
-
-Sending the broadcase
-
-am broadcast -a MyBroadcast -n com.isi.vul_broadcastreceiver.MyBroadCastReceiver –es number 5556.
-
-```
 
 
 
 
 
 # Bugs
+
+### Attacking Vulnerable Broadcast Receivers
+
+
+Getting breadcase Receavers 
+
+```
+- From XML file
+- Using Drozer
+```
+
+Finding the code which handles the broadcast
+```
+- decompile the app
+- identifying the parameters to be send to breadcast receaver.
+```
+
+Sending the broadcast
+```
+am broadcast -a MyBroadcast -n com.isi.vul_broadcastreceiver.MyBroadCastReceiver –es number 5556.
+
+```
+
+
 
  ### Testing Content Providers
  
