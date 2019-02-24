@@ -738,14 +738,29 @@ com.linkedin.android.authenticator.AuthenitactionService
 
 # Bugs
 
-### Insecure Data storage in SharedPrefs
+### Insecure Data storage
 
 Android app can stored the users senstive information like cookies,auth_token,username&Pass and other details in shared prefrences without encryption which can lead to data theft.
 
 ```
+sharedPrefs
+-----------
+
 adb shell
 cd /data/data/com.package.name/sharedprefs/
 Test all the files for sensitive information.
+
+
+Databases
+---------
+Open up databases
+check if you are storing information in plainText
+
+
+Temporary Files
+--------------
+Keep and Eye on Temporary Files created 
+Have a look inside them too.
 ```
 
 
