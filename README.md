@@ -239,6 +239,11 @@ Start packages
 am start packag.name
 ```
 
+Sending broadcase
+```
+am broadcast -a MyBroadcast -n com.isi.vul_broadcastreceiver.MyBroadCastReceiver –es number 5556.
+
+```
 
 
 
@@ -708,6 +713,23 @@ com.linkedin.android.authenticator.AuthenitactionService
 --action anroid.accounts.AccountAuthenitcator
 ```
 
+
+# Attacking Vulnerable Broadcast Receivers
+
+```
+Getting breadcase Receavers 
+- From XML file
+- Using Drozer
+
+Finding the code which handles the broadcase
+- decompile the app
+- identifying the parameters to be send to breadcast receaver.
+
+Sending the broadcase
+
+am broadcast -a MyBroadcast -n com.isi.vul_broadcastreceiver.MyBroadCastReceiver –es number 5556.
+
+```
 
 
 
