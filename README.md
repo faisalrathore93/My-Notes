@@ -761,6 +761,15 @@ Temporary Files
 --------------
 Keep and Eye on Temporary Files created 
 Have a look inside them too.
+
+
+
+
+External Storage
+----------------
+Check which file is being created/deleted by the app in external storage.
+and what information is being stored by the app.
+
 ```
 
 
