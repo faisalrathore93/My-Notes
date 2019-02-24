@@ -740,7 +740,7 @@ Finding the code which handles the broadcast
 
 Sending the broadcast
 ```
-am broadcast -a MyBroadcast -n com.isi.vul_broadcastreceiver.MyBroadCastReceiver –es number 5556.
+am broadcast -a MyBroadcast -n com.isi.vul_broadcastreceiver/.MyBroadCastReceiver –es number 5556.
 
 ```
 
