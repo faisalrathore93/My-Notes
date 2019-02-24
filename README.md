@@ -97,7 +97,7 @@ label -- String to show while asking permission
 <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
 
 ```
-## Analyze AndroidManifest.xml file for exported Activity components.
+#### Analyze AndroidManifest.xml file for exported Activity components.
 ```
 Find all the activities eg
 <activity android:name="com.isi.testapp.Welcome" android:exported="true"></activity>
