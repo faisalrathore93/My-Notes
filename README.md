@@ -738,6 +738,20 @@ com.linkedin.android.authenticator.AuthenitactionService
 
 # Bugs
 
+### Insecure Data storage
+
+Android app can stored the users senstive information like cookies,auth_token,username&Pass and other details in plain text
+without encryption which can lead to data theft.
+
+```
+adb shell
+cd /data/data/com.package.name/*
+Test all the files for sensitive information.
+```
+
+
+
+
 ### Hard-coding issues
 Check Source code for sensitive information about the company.
 ```
