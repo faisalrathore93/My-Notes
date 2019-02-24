@@ -104,6 +104,42 @@ Find all the activities eg
 here com.isi.testapp.Welcome could be the activity
 ```
 
+# Playing with Package Resources
+
+In android All the files are located in /data/data. In these Directores You can see permissions files,databases and other
+files owned by the apps by fallowing commands.
+
+
+List all Packages
+```
+ls -al
+```
+
+list all Packages with their metedata
+```
+ls -alR */
+```
+
+
+List all packages with their databases only
+```
+ls -alR */databases/
+```
+
+
+List all packages with their Files only
+```
+ls -alR */files/
+```
+
+
+List Specific Files
+```
+ls –al */*/*.xml
+ls –al */*/*.png
+ls –al */*/*.mp3
+```
+
 
 
 
@@ -211,16 +247,11 @@ adb logcat | grep PID
 
 ```
 
-# ADB Package Manager
+# Android Package Manager [pm]
 
 list all packages
 ```
 pm list packages
-```
-
-Start packages
-```
-am start packag.name
 ```
 
 Kill App
@@ -228,41 +259,14 @@ Kill App
 kill PID
 ```
 
-# Package Resources
+# Android Activity Manager
 
-In android All the files are located in /data/data. In these Directores You can see permissions files,databases and other
-files owned by the apps by fallowing commands.
-
-
-List all Packages
+Start packages
 ```
-ls -al
-```
-
-list all Packages with their metedata
-```
-ls -alR */
+am start packag.name
 ```
 
 
-List all packages with their databases only
-```
-ls -alR */databases/
-```
-
-
-List all packages with their Files only
-```
-ls -alR */files/
-```
-
-
-List Specific Files
-```
-ls –al */*/*.xml
-ls –al */*/*.png
-ls –al */*/*.mp3
-```
 
 
 
@@ -276,7 +280,7 @@ ls –al */*/*.mp3
 
 Android Apps can store Sensitive information in the logs which can be Accessed by other apps.
 
-## How to Find Log based Bugs
+### How to Find Log based Bugs
 
 - Watching the Logs
 - Using Source code
@@ -332,7 +336,7 @@ apktool b Folder2
 
 ```
 
-## Signing the app
+# Signing the app
 ```
 Generating Key:
 keytool -genkey -v -keystore imran.keystore -alias mubashir -keyalg RSA -keysize 2048 -validity 200
@@ -377,30 +381,7 @@ Using Burp to Intercept HTTP's Traffic:
  After Performing these steps you maybe able to intercept the HTTP's Traffic.
  
  
- # Testing Content Providers
- 
- - The content Providers are like an medium between an app and the data sources.
- - These needs to be searched inside the source code of an app
- - They always start with content://
- 
-They can be found by fallowing these steps
-```
-- Pull the app from the android
 
-adb shell pm path com.android.package
-
-- Decompile it
-
-apktool d app.apk
-
-- grep the content Providers
-
-grep -iRn 'content://'
-
-- query it
-
-adb shell content query --url content://example
-```
 
 ## Using Drozer
 #### Installing On PC: 
@@ -526,23 +507,14 @@ Launching any enumerated activity
 
 ```
 run app.activity.start --action android.intent.action.MAIN --category android.intent.category.LAUNCHER --component app.packagen.name app.package.service.name
+
+or
+
+run app.activity.start --category android.intent.category.LAUNCHER --component app.packagen.name app.package.service.name
+
 ```
 
 
-
-# CSIP Vulnerability
-
-Sometimes Developers can set permissions to the content://providers but they forget to apply the signatures. Which may 
-result that contetn Url can be called by other appilication and steal the APP data.
-
-Here is How to do it.
-```
-1
-2
-3
-4
-5
-```
 # Accessable Content Provides pathPrefix:"/"
 
 Sometimes the Content provider can be protected by the permission but always look at the additional paremeters to check if
@@ -743,10 +715,33 @@ com.linkedin.android.authenticator.AuthenitactionService
 
 
 
-
-
-
 # Bugs
+
+ ### Testing Content Providers
+ 
+ - The content Providers are like an medium between an app and the data sources.
+ - These needs to be searched inside the source code of an app
+ - They always start with content://
+ 
+They can be found by fallowing these steps
+```
+- Pull the app from the android
+
+adb shell pm path com.android.package
+
+- Decompile it
+
+apktool d app.apk
+
+- grep the content Providers
+
+grep -iRn 'content://'
+
+- query it
+
+adb shell content query --url content://example
+```
+
 
 ### Insecure Data storage
 
@@ -804,7 +799,7 @@ run app.services.info -p null -a com.box.android
 its always good to enable log cat while playing with services just to make sure any information is not diclosed
 ```
 
-### Launching Services with null permissionxxxxx
+### Launching Services with null permissions
 
 ```
  run app.service.start –-component package.name service.name
@@ -915,3 +910,22 @@ http://blog.parse.com/2012/04/10/discovering-a-major-security-hole-in-facebooks-
 
 The Android Developer – Reading and Writing Logs webpage at 
 http://developer.android.com/tools/debugging/debugging-log.html
+
+
+
+
+#More To Come
+
+# CSIP Vulnerability
+
+Sometimes Developers can set permissions to the content://providers but they forget to apply the signatures. Which may 
+result that contetn Url can be called by other appilication and steal the APP data.
+
+Here is How to do it.
+```
+1
+2
+3
+4
+5
+```
