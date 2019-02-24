@@ -736,6 +736,9 @@ com.linkedin.android.authenticator.AuthenitactionService
 
 
 
+
+
+
 # Bugs
 
 ### Insecure Data storage
@@ -846,6 +849,10 @@ Check if There is any API Key or Sensitive iformation in Source Code
 ### Leaking Content Providers
 ```
 Check if content providers are accessable to other apps
+Find contrent Providers
+grep -iRn /soruceCode/
+adb shell content query --url content://asdasdasdasdasdasd
+
 ```
 
 
