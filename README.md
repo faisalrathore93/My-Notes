@@ -951,6 +951,17 @@ vulnerabledatabase.contentprovider/statements
 
 ```
 
+### Finding SQLi vulnerable Content Providers
+```
+dz> run app.provider.query [URI] –-selection "1=1" 
+dz> run app.provider.query [URI] –-selection "1-1=0"
+dz> run app.provider.query [URI] –-selection "0=0"
+
+It should return all the values fromt the content provider.
+```
+
+
+
 ### Directory Traversal in Content Providers
 ```
 Check if app has read file system permission
