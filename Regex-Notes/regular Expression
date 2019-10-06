@@ -1,0 +1,63 @@
+abc != cba
+
+
+escaping chars with \ 
+
+.			any character except \n
+\d 			any Number 0-9
+\D 			Everthing that is not a number
+\w			Matches [a-z][A-Z] _ [0-9]. It doesn't math metacharacters
+\W			Matches all Except \w
+\s			Whitespaces,Tabs and newlines
+\S			Matches Everything except \s
+
+Word boundries \b
+==================
+
+it takes anythig with it example \nimran it will search all imran with word boundries means imran which have starting 
+boundry or space boundry
+
+imran	 	--> has a Start boundry 			-->matched
+parray imran 	--> has an space boundry			-->matched
+parrayimran 	--> this imran doesn't have any boundry 	-->matched
+
+
+
+
+^       		- Beginning of a String
+^imran			Matches if its at the beginning of string
+
+
+$ 			End of a String
+imran$			Matches if the string ends with imran
+
+
+[]      - Matches Character set in brackets
+[^ ]    - Matches Character set NOT in brackets
+|       - Either Or
+( )     - Group
+
+
+
+
+
+Quantifiers:
+============
+are used to specify the Quantity of the patter we are searching for 
+
+
+*       - 0 or More
++       - 1 or More
+?       - 0 or One
+{3}     - Exact Number
+{3,4}   - Range of Numbers (Minimum, Maximum)
+
+
+
+
+
+
+#### Sample Regexs ####
+
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+
