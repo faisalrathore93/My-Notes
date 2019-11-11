@@ -40,10 +40,6 @@ Editor| Search|Ctrl+S|
 Ctrl+G for  | "Issue Repeater request"
 
 
-### Personalized Scans
-
-![image](https://raw.githubusercontent.com/imran-parray/My-Notes/master/images/Personalized-scans.png)
-
 
 ### Moving URls In/Out
 
@@ -77,3 +73,30 @@ Editor| Go to next paragraph|Ctrl+Down|
 Editor| Go to next paragraph (extend selection)|Ctrl+Shift+Down|
 Editor| Go to start of document|Ctrl+Home|
 Editor| Go to start of document (extend selection)|Ctrl+Shift+Home|
+
+
+
+
+### Personalized Scans
+
+![image](https://raw.githubusercontent.com/imran-parray/My-Notes/master/images/Personalized-scans.png)
+
+
+
+### HTTP Pipelining
+
+HTTP pipelining allows us to send muntilpe requests in the same repeater tab (if http pipeling is supported by server)
+
+To enable this go to:
+
+- Project options
+- Streaming Responses
+- Add Scope
+```
+Un-tick Update Content Lenght in Repeater
+```
+
+Now Paste Multiple Requests in repeater
+![image](https://raw.githubusercontent.com/imran-parray/My-Notes/master/images/Screenshot_2019-11-11_09-53-05.png)
+
+[Demo:](https://youtu.be/boHIjDHGmIo?t=337)
