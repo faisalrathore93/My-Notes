@@ -1,13 +1,13 @@
 
 # ASAM-LEAK-004: Information Leak to Network
 
-## escription:
+#  escription:
 In order to send data to the network, it is necessary to have the “android.permission.INTERNET” permission enabled. An application with such permission can send information to the network through many libraries; the most common ones are java.net.* and android.net.*. It is not recommended to send unencrypted sensitive information since an attacker could extract it by sniffing the network traffic.
 
-## isks:
+#  isks:
 An attacker could get access to unencrypted sensitive information sent to the network by sniffing.
 
-## ecommendations:
+#  ecommendations:
 It is recommended to store sensitive information in locations that can only be accessed by the application and, preferably, encrypt such information. In general terms, these guidelines must be followed in order to store data:
 
 
@@ -21,8 +21,8 @@ It is recommended to store sensitive information in locations that can only be a
 
 5. Network Connection. For storing data on services through the net. In such cases, it is recommended to maximize precautions and use encryption techniques.
 
-## eferences:
-1. http://developer.android.com/guide/topics/data/data-storage.html#filesExternal
+#  eferences:
+1. http://developer.android.com/guide/topics/data/data-storage.html# ilesExternal
 
 2. http://developer.android.com/guide/topics/data/data-storage.html
 

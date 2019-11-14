@@ -1,17 +1,17 @@
 
 # ASAM-CONF-012: Improper Shared Preferences permissions
 
-## escription:
+#  escription:
 Generating Shared Preferences with the “MODE_WORLD_READABLE” permission allows a global Shared Preferences reading, so it is not recommended except if it is a file that does not reveal confidential information. Likewise, it is not recommended to set Shared Preferences with “MODE_WORLD_WRITABLE” permission. An example of dangerous file statementcan be seenbelow:
 
 
 > SharedPreferencesprefsAllWrite = getSharedPreferences("MisPreferenciasWrite",MODE_WORLD_WRITEABLE);
 
-## isks:
+#  isks:
 Setting global reading permissions reveals the information contained in a file. If the writing permission is provided, any application could modify the content of such file, extending the attack surface.
 
 
-## ecommendations:
+#  ecommendations:
 It is recommended to generate files with global reading or writing permissions only when it is strictly necessary. In general terms, these guidelines are recommended to follow in order to store data:
 
 
@@ -27,6 +27,6 @@ It is recommended to generate files with global reading or writing permissions o
 
  
 
-## eferences:
+#  eferences:
 
 1. http://developer.android.com/reference/android/content/SharedPreferences.html

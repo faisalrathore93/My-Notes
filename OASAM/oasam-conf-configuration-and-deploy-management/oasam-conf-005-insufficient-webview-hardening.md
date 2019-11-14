@@ -1,13 +1,13 @@
 
 # ASAM-CONF-005: Insufficient WebView hardening
 
-## escription:
+#  escription:
 WebViewis a class of Android that allows displaying online content within the Android Activities. However, when installing WebView on Android Applications, it has to be taken into consideration the fact that a poor configuration of this extension could expose the application user to a multitude of risks.
 
-## isks:
+#  isks:
 An insufficient hardening may imply risks to the user, becoming possible targets for attacks through the web.
 
-## ecommendations:
+#  ecommendations:
 There is a set of practices that must be taken into consideration in order to harden WebView:
 
 1. Disabling browser plugins support; for example, with the following statement:
@@ -31,7 +31,7 @@ webview.getWebSettings().setAllowFileAccessFromFileURLs(false);
 webview.getWebSettings().setAllowUniversalAccessFromFileURLs(false);
 
 
-## eferences:
+#  eferences:
 1. Flaw 28 of “42+ Best practices in secure mobile development for iOS and Android”
 
 2. http://developer.android.com/reference/android/webkit/WebView.html

@@ -1,20 +1,20 @@
 
 # ASAM-IS-002: Malicious Activity Launch
 
-## escription:
+#  escription:
 Activities can be launched on the basis of data coming from the user or the reception of arbitrary Intents. This allows various attack surfaces:
 
 1. If an Activity uses data from the Intent without verifying its origin, the application’s data integrity will be affected.
 
 2. If an Activity delivers data considered as sensitive and can be publicly launched, a specially manipulated Intent could launch it, leading to a confidential information disclosure.
 
-## isks:
+#  isks:
 The presence of this vulnerability could mislead an user, due to the fact that users would be thinking that they are using a legitimate Activity, when they are actually performing actions that are being reported to the attacker. Additionally, it is possible the leak of the information used by the Activity.
 
-## ecommendations:
+#  ecommendations:
 It is recommended to use public components only when necessary and, in those cases, validate thoroughly each parameter retrieved from the Intent or coming from the user.
 
-## eferences:
+#  eferences:
 1. Flaw 3.2.2 of “Analyzing Inter-Application Communication in Android”
 
 2. https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)

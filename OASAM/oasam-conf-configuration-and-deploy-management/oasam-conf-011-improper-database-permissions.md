@@ -1,16 +1,16 @@
 
 # ASAM-CONF-011: Improper Database permissions
 
-## escription:
+#  escription:
 Generating databases with the “MODE_WORLD_READABLE” permission enabled allows global database reading, so it is not recommended except if it is a file that does not reveal confidential information. Likewise, it is not recommended to set databases with “MODE_WORLD_WRITABLE” permission. An example of dangerous file statementcan be seenbelow:
 
 
 > SQLiteDatabasemyWorldReadDB = openOrCreateDatabase("Contacts", MODE_WORLD_READABLE, null);
 
-## isks:
+#  isks:
 Setting global reading permissions reveals the information contained in a file. If the writing permission is provided, any application could modify the content of such file, extending the attacksurface.
 
-## ecommendations:
+#  ecommendations:
 It is recommended to generate files with global reading or writing permissions only when it is strictly necessary. In general terms, these guidelines are recommended to follow in order to store data:
 
 
@@ -24,5 +24,5 @@ It is recommended to generate files with global reading or writing permissions o
 
 5. Network Connection. For storing data on services through the net. In such cases, it is recommended to maximize precautions and use encryption techniques.
 
-## eferences:
+#  eferences:
 1. http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html

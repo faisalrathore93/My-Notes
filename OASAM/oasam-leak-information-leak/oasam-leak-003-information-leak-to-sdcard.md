@@ -1,7 +1,7 @@
 
 # ASAM-LEAK-003: Information Leak to SDCard
 
-## escription:
+#  escription:
 It is possible to store data on SDcards through the following functions:
 
 
@@ -11,10 +11,10 @@ It is possible to store data on SDcards through the following functions:
 
 It is not recommended to store sensitive data in the device SDcard, since any application could extract it.
 
-## isks:
+#  isks:
 Any application could have access to the sensitive data stored in the SDcard.
 
-## ecommendations:
+#  ecommendations:
 It is recommended to store sensitive information in locations that can only be accessed by the application and, preferably, encrypt such information. In general terms, the following guidelines must be followed in order to store data:
 
 
@@ -28,8 +28,8 @@ It is recommended to store sensitive information in locations that can only be a
 
 5. Network Connection. For storing data on services through the net. In such cases, it is recommended to maximize precautions and use encryption techniques.
 
-## eferences:
-1. http://developer.android.com/guide/topics/data/data-storage.html#filesExternal
+#  eferences:
+1. http://developer.android.com/guide/topics/data/data-storage.html# ilesExternal
 
 2. http://developer.android.com/guide/topics/data/data-storage.html
 

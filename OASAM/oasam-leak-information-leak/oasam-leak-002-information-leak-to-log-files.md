@@ -1,7 +1,7 @@
 
 # ASAM-LEAK-002: Information Leak to log files
 
-## escription:
+#  escription:
 It is possible to store information in Android logs through the following functions:
 1. Log.v(). In order to store extended information.
 
@@ -15,10 +15,10 @@ It is possible to store information in Android logs through the following functi
 
 It is not recommended to store sensitive information in the device’s logs because any application with the “READ_LOGS” permission could have access to such logs.
 
-## isks:
+#  isks:
 Any application with access to the logs could extract sensitive information that could be stored in those logs.
 
-## ecommendations:
+#  ecommendations:
 It is recommended to store sensitive information in locations that can only be accessed by the application and, preferably, encrypt such information. In general terms, these guidelines must be followed in order to store data:
 
 
@@ -32,10 +32,10 @@ It is recommended to store sensitive information in locations that can only be a
 
 5. Network Connection. For storing data on services through the net. In such cases, it is recommended to maximize precautions and use encryption techniques.
 
-## eference:
+#  eference:
 1. http://developer.android.com/reference/android/util/Log.html
 
-2. http://developer.android.com/reference/android/Manifest.permission.html#READ_LOGS
+2. http://developer.android.com/reference/android/Manifest.permission.html# EAD_LOGS
 
 3. http://developer.android.com/guide/topics/data/data-storage.html
 

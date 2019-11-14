@@ -1,13 +1,13 @@
 
 # ASAM-LEAK-005: Information Leak to IPC
 
-## escription:
+#  escription:
 It is possible to store information in Intents through theputExtra() y putExtras() functions from the Intent class, as well as through the URI in the parameters by the GET method through the parse() from the URI class. It is not recommended to send unencrypted sensitive data through Implicit Intents since the application that will process such information is unknown a priori.
 
-## isks:
+#  isks:
 An illegitimate application could get access to sensitive data by intercepting the Intent.
 
-## ecommendations:
+#  ecommendations:
 It is recommended to store sensitive information in locations that can only be accessed by the application and, preferably, encrypt such information. In general terms, these guidelines must be followed in order to store data:
 
 1. Shared Preferences. For storing options as pairs of values.
@@ -20,7 +20,7 @@ It is recommended to store sensitive information in locations that can only be a
 
 5. Network Connection. For storing data on services through the net. In such cases, it is recommended to maximize precautions and use encryption techniques.
 
-## eferences:
+#  eferences:
 1. http://developer.android.com/guide/topics/data/data-storage.html
 
 2. Flaw 32 of “42+ Best practices in secure mobile development for iOS and Android”
