@@ -207,13 +207,14 @@ $ewfverify Webserver.E01
 ```
 
 Now, let us check our drive and what volumes does it include:
+The Image can be seen as an layer structered of `container`>>`disk`>>`partitions`>>`files/Folders`
+So this tool can be used to see the partitions without mounting the image
 ```
 $mmls Webserver.E01
 ```
 First, let’s mount the E01 file, which could be done as:
-	
 ```
-$ sudo ewfmount Webserver.E01 ewf/
+$sudo ewfmount Webserver.E01 ewf/
 ```
 
 We will be using the kpartx tool to do the LVM mappings for the volumes we have. We
