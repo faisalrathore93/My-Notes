@@ -198,5 +198,202 @@ bar.txt matches hashes.txt:foo.txt (99)
 ```
 The number at the end of the line is a match score, or a weighted measure of how similar these files are. The higher the number, the more similar the files.
 
+# Day 2
 
+
+Verify the case image, which could be done:
+```
+$ewfverify Webserver.E01
+```
+
+Now, let us check our drive and what volumes does it include:
+```
+$mmls Webserver.E01
+```
+First, let’s mount the E01 file, which could be done as:
+	
+```
+$ sudo ewfmount Webserver.E01 ewf/
+```
+
+We will be using the kpartx tool to do the LVM mappings for the volumes we have. We
+can do a listing first, followed by the mapping itself, as seen below:
+List all partitions inside lvm
+```	
+$ sudo kpartx -al ewf/ewf1
+```
+map lvm partitions to /dev/paritions inside workstation system, to see the lvm after maping use lvdispay
+```
+$ sudo kpartx -av ewf/ewf1
+```
+Display mapped lvm 
+```
+$ sudo lvdisplay
+```
+
+Mount the Image
+```
+$ sudo mount -o ro,noatime,noexec /dev/VulnOSv2-vg/root case1/
+```
+
+Let’s do some checking first using ​fsstat​ to see why that happened:
+```
+$ sudo fsstat /dev/VulnOSv2-vg/root | head -n 20
+```
+	
+
+If not mounted properly then adjust our command with the noload/norecovery option:
+```
+$ sudo mount -o ro,noatime,noexec,noload /dev/VulnOSv2-vg/root case1/
+```
+
+Let’s check the timezone of the system:
+```
+$ cat case1/etc/timezone
+```
+
+
+Task: check system logs
+
+ 
+we are going to check is  wtmp ( logins and logouts) PTS is remote tty local 
+```
+$ last -f case1/var/log/wtmp | head -n 10
+```
+
+Now the btmp file (failed login attempts):
+```
+$ sudo last -f case1/var/log/btmp | head -n 20
+```
+
+
+Check the auth.log file and explain what happened:
+```
+$ sudo cat case1/var/log/auth.log
+```
+Let’s also check the ​lastlog​ file using the “​strings​” command:
+```
+$ strings case1/var/log/lastlog
+```
+
+
+#Task: Use sleuth kit tools 
+
+List the inode numbers 
+```
+$ sudo fls -l /dev/mapper/VulnOSv2-vg/root
+```
+```
+$ sudo fls -l /dev/VulnOSv2-vg/root ​inode#
+```
+Find the associated file with inode
+```
+$ sudo ffind /dev/VulnOSv2-vg/root ​inode#
+```
+
+Lets find the last log by inode 
+	
+``` 
+$ sudo fls -l /dev/VulnOSv2-vg/root ​inode#​ | grep lastlog
+```
+we found many that means it was deleted 
+
+
+We can extract a file from the volume using the TSK’s ​icat​ command:
+```
+$ sudo icat /dev/VulnOSv2-vg/root ​inode#​ | tee lastlog
+```
+
+Now check the file’s type and content with both the ​file​ and ​strings​ commands:
+```
+$ file lastlog
+```
+Then
+```
+$ strings lastlog
+```
+
+Task #5: Users, Groups, Permissions, etc
+So, it seems a user was added to the system and another user ​'mail'​ was being used,
+which is very weird!
+
+
+Check users
+```
+$ cat case1/etc/passwd
+```
+Check passwrds to login
+```
+$ cat case1/etc/shadow
+```
+Check Groups 
+```
+$cat /etc/groups
+```
+
+__Q4: Who has sudo access, or in other words, is in the sudo group?__
+
+Explore the directory and its contents.
+__Q6: Did you find anything useful?__
+
+Move on to investigate the mail user.
+__Q7: Did you find anything in mail's home directory?__
+
+Extract the contents of the ​.bash_history​ (a file that is used to store a history of all the
+commands used on a Linux system). The dot at the beginning of the file, denotes that
+this is a hidden file.
+
+Date to recover
+```
+$ ​after​=$(date -d"-20days" +%s)
+```
+
+Dump file system journal 
+```
+$ sudo debugfs -R 'dump <8> ./journal' /dev/VulnOSv2-vg/root
+```
+
+Now, let’s perform the recovery 
+```
+$ sudo ext4magic -a DATE -b DATE -j ./journal -m -d output
+```
+
+Search through the files recovered and find the Kernel exploit used. As a hint on how to
+do that, you can Google the name of the dot c file that you found to find what it is and
+what it’s contents looks like, then use that in your search. The Linux ​find​ command is
+very good for this, learn how to use it.
+
+
+__Task #7: Finding how the threat actor gained access__
+
+Q1: What “web application” was being used? (​Hint:​ /var/www/html)
+Q2: Try to identify the version of the web application and do you think it was vulnerable?
+Q3: Search through the web application server’s error and access logs. Did you find
+anything? (​Hint:​ you should find weird POST requests.)
+
+
+__Check the long string in the HTTP POST request.
+Q4: What type of encoding is being used?__
+Now, you might be asking, how can we decode the string we found? Well the answer is
+very easy in this case. We can either ​echo​ the string to ​base64​ command or save it in a
+file and cat to ​base64​ as we can see here (blob saved in post.txt file):
+$ cat post.txt | base64 -d
+
+
+__Task #8: Generating a super timeline and filtering it__
+
+Timeline Generation 
+```
+$ sudo log2timeline.py​ -t / --parse linux,apache_access,apt_history timeline.case1 case1/
+```
+
+
+Finally, let’s filter our timeline and sort it using the psort.py tool, which can be done as:
+
+
+```
+$ sudo psort.py -z ​timezoneValue​ -o L2tcsv -w webserver.csv timeline.case1 “date > ‘2019-10-05 01:01:01’ AND date < ‘2019-10-08 01:01:01’”
+ ```
+
+ 
 
