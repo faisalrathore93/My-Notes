@@ -48,7 +48,7 @@ Ctrl+G for  | "Issue Repeater request"
 Copy Url        |      In
 Paste as Request   |    Out
 
-###Others
+### Others
 
 | Type | Description | Shortcut |
 |:-:|---|---|
@@ -100,3 +100,33 @@ Now Paste Multiple Requests in repeater
 ![image](https://raw.githubusercontent.com/imran-parray/My-Notes/master/images/Screenshot_2019-11-11_09-53-05.png)
 
 [Demo:](https://youtu.be/boHIjDHGmIo?t=337)
+
+
+
+#### API Methods Testing 
+
+Suppose You have an Endpoint list
+
+```
+/a
+/b
+/c
+```
+and you want to test
+```
+GET /a
+GET /b
+GET /c
+POST /a
+POST /b
+POST /c
+DELETE /a
+DELETE /b
+DELETE /c
+```
+
+- Send an request /xyz to intruder
+- Select 2 Position in Request
+- Select Attack Type `Pitchfork`
+- Now Fill Payload list one with `HTTP Methods`
+- And Fill Payload list two with `Endpoint lists`
