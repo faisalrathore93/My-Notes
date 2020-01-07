@@ -117,3 +117,14 @@ __Refrence__
 
 
 --- 
+
+
+### Double Send Cookies
+
+If the CSRF token are send in Cookies and parameters as well.
+
+- Check if you can change the parameter value to invalid since the cookie value will be right it may bypass the CSRF protection.
+
+
+---
+
