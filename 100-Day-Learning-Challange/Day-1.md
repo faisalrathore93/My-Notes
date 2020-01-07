@@ -105,3 +105,15 @@ We need cookies to get the info from the server. But Cross requests aren't allow
 __Refrences__
 - [https://enumerated.wordpress.com/2019/12/24/sop-bypass-via-browser-cache/](https://enumerated.wordpress.com/2019/12/24/sop-bypass-via-browser-cache/)
 - [https://hackerone.com/reports/761726](https://hackerone.com/reports/761726)
+
+---
+
+### DOM based XSS
+
+Always Look at how Ajax request are made. Search for the code which handle the ajax requests. The data they receaving may be user controllabe and you may get the DOM based XSS.
+
+__Refrence__
+[https://jinone.github.io/bugbounty-a-dom-xss/](https://jinone.github.io/bugbounty-a-dom-xss/)
+
+
+--- 
