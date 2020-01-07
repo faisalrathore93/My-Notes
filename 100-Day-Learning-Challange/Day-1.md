@@ -128,3 +128,10 @@ If the CSRF token are send in Cookies and parameters as well.
 
 ---
 
+### 2nd Order Sudomain Takeover
+
+- Always have a look at `Network` tab of `Google Developer Toolkit` for 404 Error loading of the website.
+
+--- 
+
+
