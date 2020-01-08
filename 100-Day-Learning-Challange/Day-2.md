@@ -63,3 +63,9 @@ If you ever came across a webapp which allows your to edit videos anyhow on serv
 __Refrence__
 [https://medium.com/@pflash0x0punk/ssrf-via-ffmpeg-hls-processing-a04e0288a8c5](https://medium.com/@pflash0x0punk/ssrf-via-ffmpeg-hls-processing-a04e0288a8c5)
 
+
+---
+
+### Sometimes Blind XSS doesn't allows external JS scripts to be called 
+
+[https://medium.com/@dirtycoder0124/blind-xss-a-mind-game-to-win-the-battle-4fc67c524678?](https://medium.com/@dirtycoder0124/blind-xss-a-mind-game-to-win-the-battle-4fc67c524678?)
