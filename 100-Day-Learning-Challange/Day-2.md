@@ -53,3 +53,13 @@ then try `Target.com/vul.php?url=attacker.com/redirect.php`
 __Refrence__
 
 [https://medium.com/@dPhoeniixx/vimeo-upload-function-ssrf-7466d8630437](https://medium.com/@dPhoeniixx/vimeo-upload-function-ssrf-7466d8630437)
+
+---
+
+### SSRF via Video Files
+
+If you ever came across a webapp which allows your to edit videos anyhow on server side. You can try to do ssrf.
+
+__Refrence__
+[https://medium.com/@pflash0x0punk/ssrf-via-ffmpeg-hls-processing-a04e0288a8c5](https://medium.com/@pflash0x0punk/ssrf-via-ffmpeg-hls-processing-a04e0288a8c5)
+
