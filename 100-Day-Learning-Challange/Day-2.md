@@ -26,3 +26,8 @@ Sometimes if any user input data is send to email ! Try it for HTML injection.
 
 ---
 
+
+### IDOR Tip
+
+Always try to Bruteforce all HTTP methods on API Endpoints It can lead to some devastating results.
+
