@@ -1,5 +1,5 @@
 ## 100 Day Learning Challange
-
+## Day 1
 ### JsonP and XSSI
 
 If any of the information is leaked on an 
@@ -134,4 +134,23 @@ If the CSRF token are send in Cookies and parameters as well.
 
 --- 
 
+
+
+
+
+## Day 5
+
+### Blind XSS to RCE
+
+Always try to steal the DOM of the admin page it will lead access to more juicy information than Cookies
+
+__refrence__:
+https://blog.saycure.io/2019/01/24/antihack-xss-2-php-upload/
+
+
+
+
+
+
+Last : Chaining Tricky OAuth Exploitation To Stored XSS
 
