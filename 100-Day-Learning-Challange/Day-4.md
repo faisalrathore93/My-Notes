@@ -241,6 +241,16 @@ redirect.php?url=.evil.com          |    https://host.com.evil.com
 
 ---
 
+## day 4
+
+
+
+#### Un-Autheticated File Upload
+
+Try to upload files on File upload endpoint without authentication
+
+__Refrences:__
+https://ysamm.com/?p=12
 
 
 
@@ -257,18 +267,11 @@ https://blog.saycure.io/2019/01/24/antihack-xss-2-php-upload/
 
 
 
-#### Un-Autheticated File Upload
-
-Try to upload files on File upload endpoint without authentication
-
-__Refrences:__
-https://ysamm.com/?p=12
-
 
 
 ## Day 6
 
-# Maximizing the Open Redirect
+### Maximizing the Open Redirect
 
 Always try to convert open redirect into stoken stealing
 
