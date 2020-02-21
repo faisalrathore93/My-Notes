@@ -106,7 +106,7 @@ a=123
 echo "a = $a" # a = 321 (value inside code block)
 ```
 
-#### Using -
+### Using -
 
 __redirection from/to stdin or stdout [dash]__
 ```bash
@@ -122,7 +122,7 @@ grep Linux file1 | diff file2 -
 
 
 
-#### variables
+### variables
 
 - Enclosing a referenced value in double quotes (" ... ") does not interfere with variable substitution.
 This is called partial quoting, sometimes referred to as "weak quoting." Using single quotes (' ... ')
@@ -132,7 +132,7 @@ sometimes referred to as 'strong quoting.
 - Note that $variable is actually a simplified form of ${variable}
 
 
-__# Quoting a variable preserves whitespace.__
+__Quoting a variable preserves whitespace.__
 
 ```shell
 names="A B     C     D"
@@ -161,7 +161,7 @@ root@root:~# echo $a
 root@root:~# 
 ```
 
-#### Shift Command Line Args
+### Shift Command Line Args
 
 ```bash
 echo "Arg1 $1"
@@ -181,6 +181,75 @@ Arg5
 
 ```
 
-Page 47
+### Quoting
+
+When referencing a variable, it is generally advisable to enclose its name in double quotes. This prevents
+reinterpretation of all special characters within the quoted string -- except $, \` (backquote), and \ (escape). [30]
+Keeping $ as a special character within double quotes permits referencing a quoted variable
+("$variable"), that is, replacing the variable with its value
 
 
+__Double Quotes supressed Echo__
+```shell
+root@root:~# echo $(ls)
+Desktop Downloads go imxx lists Pictures Videos VirtualBox VMs
+root@root:~# echo "$(ls)"
+Desktop
+Downloads
+go
+imxx
+lists
+Pictures
+Videos
+VirtualBox VMs
+root@root:~# 
+```
+
+__Single Quotes VS Double Quotes__
+```shell
+root@root:~# name='imran'
+root@root:~# echo "$name"
+imran
+root@root:~# echo '$name'
+$name
+root@root:~# 
+```
+
+> Single quotes (' ') operate similarly to double quotes, but do not permit referencing variables, since the special meaning of $ is turned off. Within single quotes, every special character except ' gets interpreted literally. Consider single quotes ("full quoting") to be a stricter method of quoting than double quotes ("partial
+quoting").
+
+
+### Escaping 
+
+```
+\n means newline
+\r means return
+\t means tab
+\v means vertical tab
+\b means backspace
+\a means alert (beep or flash)
+```
+
+> Used "-e" option with Echo whenever you want to use any of these special chars `echo -e "\v\v\v"` Or `echo  $'\v\v\v'`
+
+### Exit and Exit Status
+
+>Every command returns an exit status (sometimes referred to as a return status or exit code). A successful command returns a 0, while an unsuccessful one returns a non-zero value that usually can be interpreted as an error code.
+
+> Within a script, an exit nnn command may be used to deliver an nnn exit status to the shell (nnn must be an integer in the 0 - 255 range).
+
+> When a script ends with an exit that has no parameter, the exit status of the script is the exit status of the last command executed in the script (previous to the exit).
+
+__using Exit Codes__
+```shell
+root@root:~# ls .bashrc
+.bashrc
+root@root:~# echo $?
+0
+root@root:~# ls imran
+ls: cannot access 'imran': No such file or directory
+root@root:~# echo $?
+2
+root@root:~# 
+```
+58
