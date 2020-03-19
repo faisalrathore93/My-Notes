@@ -105,15 +105,6 @@ Close Port:
 
 ## Scanning
 
-__ __
-
-```console
-```
-```console
-```
----
-
-
 __Simple scan__
 
 ```console
@@ -206,94 +197,52 @@ Nmap done: 1 IP address (1 host up) scanned in 0.14 seconds
 ```
 ---
 
+### Wildcards
 
-__ __
+The targets can be specified in 3 different ways
 
-```console
-```
-```console
-```
----
+- Wildcards -- 192.168.43.*
+- Range     -- 192.168.0-255.0-255
+- CIDR      -- 192.168.0.0/16
 
-__ __
-
-```console
-```
-```console
-```
----
-
-__ __
+### Options:
 
 ```console
+nmap 192.168.43.*
 ```
 ```console
+nmap 192.168.43.0-255
 ```
----
+```console
+nmap 192.168.43.0/10
+```
 
-__ __
+Other Options:
 
+__To exclude the Host__
 ```console
+nmap 127.0.0.1-255 --exclude 127.0.0.1
 ```
+__Input list__
 ```console
+nmap 127.0.0.1-255 -iL hosts.txt
 ```
----
 
-__ __
+__Exclude the range of ip addresses__
+```console
+nmap 127.0.0.1-255 --excludefile hosts.list
+```
 
+__All ports__
 ```console
+nmap -p- localhost
 ```
-```console
-```
----
 
-__ __
+__Port range__
+```console
+nmap -p 0-65535 localhost
+```
 
-```console
-```
-```console
-```
----
-
-__ __
-
-```console
-```
-```console
-```
----
-
-__ __
-
-```console
-```
-```console
-```
----
-
-__ __
-
-```console
-```
-```console
-```
----
-
-__ __
-
-```console
-```
-```console
-```
----
-
-__ __
-
-```console
-```
-```console
-```
----
 
 __ __
 
