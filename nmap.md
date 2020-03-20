@@ -244,6 +244,55 @@ nmap -p 0-65535 localhost
 ```
 
 
+__No port scanning__ (to check if the host is up)
+
+```console
+root@root:~# nmap 127.0.0.1-5 -sn 
+```
+```console
+Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-20 01:35 HDT
+mass_dns: warning: Unable to determine any DNS servers. Reverse DNS is disabled. Try using --system-dns or specify valid servers with --dns-servers
+Nmap scan report for localhost (127.0.0.1)
+Host is up.
+Nmap scan report for 127.0.0.2
+Host is up.
+Nmap scan report for 127.0.0.3
+Host is up.
+Nmap scan report for 127.0.0.4
+Host is up.
+Nmap scan report for 127.0.0.5
+Host is up.
+Nmap done: 10 IP addresses (10 hosts up) scanned in 0.00 seconds
+
+```
+---
+
+__Use No ping in Detection__
+
+```console
+root@root:~# nmap -Pn 127.0.0.1
+
+```
+```console
+Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-20 01:45 HDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000040s latency).
+Not shown: 996 closed ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+80/tcp   open  http
+443/tcp  open  https
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 0.11 seconds
+
+```
+---
+
+
+
+
+
 __ __
 
 ```console
@@ -251,6 +300,54 @@ __ __
 ```console
 ```
 ---
+
+
+
+
+__ __
+
+```console
+```
+```console
+```
+---
+
+
+__ __
+
+```console
+```
+```console
+```
+---
+
+
+__ __
+
+```console
+```
+```console
+```
+---
+
+
+__ __
+
+```console
+```
+```console
+```
+---
+
+
+__ __
+
+```console
+```
+```console
+```
+---
+
 
 __ __
 
