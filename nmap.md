@@ -243,64 +243,76 @@ __Port range__
 nmap -p 0-65535 localhost
 ```
 
+### Different Ping Scans
 
 __No port scanning__ (to check if the host is up)
 
 ```console
 root@root:~# nmap 127.0.0.1-5 -sn 
 ```
+__ARP ping scan__
 ```console
-Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-20 01:35 HDT
-mass_dns: warning: Unable to determine any DNS servers. Reverse DNS is disabled. Try using --system-dns or specify valid servers with --dns-servers
-Nmap scan report for localhost (127.0.0.1)
-Host is up.
-Nmap scan report for 127.0.0.2
-Host is up.
-Nmap scan report for 127.0.0.3
-Host is up.
-Nmap scan report for 127.0.0.4
-Host is up.
-Nmap scan report for 127.0.0.5
-Host is up.
-Nmap done: 10 IP addresses (10 hosts up) scanned in 0.00 seconds
-
+nmap -PR 127.0.0.1
 ```
----
 
-__Use No ping in Detection__
+
+__No ping Scan__
+```console
+nmap -Pn 127.0.0.1
+```
+__ICMP ping Scan__
+```console
+nmap -PI 127.0.0.1
+```
+__ICMP Echo ping Scan__
+```console
+nmap -PE 127.0.0.1
+```
+
+__No Timestamp Scan__
+```console
+nmap -PP 127.0.0.1
+```
+__SYN ping Scan__ (Much like SYN scan but with ACK)
+```console
+nmap -PP 127.0.0.1
+```
+
+__UDP ping Scan__
+```console
+nmap -PU 127.0.0.1
+```
+
+__TCP ping Scan__
+```console
+nmap -P 127.0.0.1
+```
+### Ports
+
+__Top 1000 Ports__
 
 ```console
-root@root:~# nmap -Pn 127.0.0.1
-
+nmap 192.168.43.*
 ```
+
+
+__Specific Ports__
+
 ```console
-Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-20 01:45 HDT
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.0000040s latency).
-Not shown: 996 closed ports
-PORT     STATE SERVICE
-21/tcp   open  ftp
-80/tcp   open  http
-443/tcp  open  https
-3306/tcp open  mysql
-
-Nmap done: 1 IP address (1 host up) scanned in 0.11 seconds
-
+nmap 192.168.43.1/24 -p 80
 ```
----
 
+__TCP and UDP Ports__
 
-
+```console
+nmap 192.168.43.1/24 -p T:80,U:53
+```
 
 
 __ __
 
 ```console
 ```
-```console
-```
----
-
 
 
 
