@@ -111,21 +111,6 @@ __Simple scan__
 root@root:~# nmap localhost
 
 ```
-```console
-Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-19 07:45 HDT
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.0000030s latency).
-Other addresses for localhost (not scanned): ::1
-Not shown: 996 closed ports
-PORT     STATE SERVICE
-21/tcp   open  ftp
-80/tcp   open  http
-443/tcp  open  https
-3306/tcp open  mysql
-
-Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
-
-```
 ---
 
 
@@ -133,21 +118,6 @@ __Simple TCP scan__ (Explicit 3 way handshake scan)
 
 ```console
 root@root:~# nmap -sT localhost
-
-```
-```console
-Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-19 07:45 HDT
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.0000030s latency).
-Other addresses for localhost (not scanned): ::1
-Not shown: 996 closed ports
-PORT     STATE SERVICE
-21/tcp   open  ftp
-80/tcp   open  http
-443/tcp  open  https
-3306/tcp open  mysql
-
-Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
 
 ```
 ---
@@ -161,41 +131,50 @@ __Simple UDP Scan__
 root@root:~# nmap -sU localhost
 
 ```
-```console
-Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-19 07:46 HDT
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.0000070s latency).
-Other addresses for localhost (not scanned): ::1
-Not shown: 999 closed ports
-PORT   STATE         SERVICE
-68/udp open|filtered dhcpc
-
-Nmap done: 1 IP address (1 host up) scanned in 1.30 seconds
-
-```
 ---
 
 
 __SYN Scan__
 
-```console
-root@root:~# nmap -sS 127.0.0.1 
-```
-```console
-Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-19 07:48 HDT
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.0000030s latency).
-Not shown: 996 closed ports
-PORT     STATE SERVICE
-21/tcp   open  ftp
-80/tcp   open  http
-443/tcp  open  https
-3306/tcp open  mysql
+---
 
-Nmap done: 1 IP address (1 host up) scanned in 0.14 seconds
+
+__Nmap OS scan__
+```console
 
 ```
 ---
+
+
+__ __
+```console
+
+```
+---
+
+
+__ __
+```console
+
+```
+---
+
+
+__ __
+```console
+
+```
+---
+
+
+__ __
+```console
+
+```
+---
+
+
+
 
 ### Wildcards
 
@@ -217,7 +196,25 @@ nmap 192.168.43.0-255
 nmap 192.168.43.0/10
 ```
 
-Other Options:
+
+
+### Other Options:
+
+
+__Nmap Verbose__
+```console
+root@root:~# nmap 192.168.43.239 -v
+```
+
+__Nmap Very Verbose__
+```console
+root@root:~# nmap 192.168.43.239 -vv
+```
+
+__Nmap show Reason__
+```console
+root@root:~# nmap 192.168.43.239 -p80,21 --open --reason
+```
 
 __To exclude the Host__
 ```console
@@ -309,9 +306,11 @@ nmap 192.168.43.1/24 -p T:80,U:53
 ```
 
 
-__ __
+__Show only open ports__
 
 ```console
+root@root:~# nmap 192.168.43.239 -p- --open
+
 ```
 
 
