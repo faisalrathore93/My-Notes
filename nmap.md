@@ -111,8 +111,6 @@ __Simple scan__
 root@root:~# nmap localhost
 
 ```
----
-
 
 __Simple TCP scan__ (Explicit 3 way handshake scan)
 
@@ -120,8 +118,6 @@ __Simple TCP scan__ (Explicit 3 way handshake scan)
 root@root:~# nmap -sT localhost
 
 ```
----
-
 
 
 
@@ -131,113 +127,70 @@ __Simple UDP Scan__
 root@root:~# nmap -sU localhost
 
 ```
----
 
 
-__SYN Scan__
 
----
-
-
-__Nmap OS scan__
+__Nmap OS scan __
 ```console
+root@root:~# nmap -p80 -O localhost
 
-```
----
-
-
-__ __
-```console
-
-```
----
-
-
-__ __
-```console
-
-```
----
-
-
-__ __
-```console
-
-```
----
-
-
-__ __
-```console
-
-```
----
-
-
-
-
-### Wildcards
-
-The targets can be specified in 3 different ways
-
-- Wildcards -- 192.168.43.*
-- Range     -- 192.168.0-255.0-255
-- CIDR      -- 192.168.0.0/16
-
-### Options:
-
-```console
-nmap 192.168.43.*
-```
-```console
-nmap 192.168.43.0-255
-```
-```console
-nmap 192.168.43.0/10
 ```
 
 
 
-### Other Options:
-
-
-__Nmap Verbose__
+__Nmap Service Detection__
 ```console
-root@root:~# nmap 192.168.43.239 -v
+root@root:~# nmap -sV -p80 localhost
+
 ```
 
-__Nmap Very Verbose__
+
+
+__Dont ping just Scan __
 ```console
-root@root:~# nmap 192.168.43.239 -vv
+
+root@root:~# nmap -PN -p80 localhost
+
 ```
 
-__Nmap show Reason__
+
+
+__Nmap Aggressive Scan__
 ```console
-root@root:~# nmap 192.168.43.239 -p80,21 --open --reason
+root@root:~# nmap -A localhost
+
+
 ```
 
-__To exclude the Host__
+
+__Nmap ACK Scan__
 ```console
-nmap 127.0.0.1-255 --exclude 127.0.0.1
-```
-__Input list__
-```console
-nmap 127.0.0.1-255 -iL hosts.txt
+root@root:~# nmap -sA localhost
+
 ```
 
-__Exclude the range of ip addresses__
+
+
+__Nmap FIN Scan__ (Use fin Packets)
 ```console
-nmap 127.0.0.1-255 --excludefile hosts.list
+root@root:~# nmap -sF localhost
+
+```
+__Nmap ACK Scan__
+```console
+root@root:~# nmap -sA localhost
+
+```
+__Nmap Xmas Scan__
+```console
+root@root:~# nmap -sX localhost
+
 ```
 
-__All ports__
+__Nmap Null Scan__ (send packets will all flags turned off)
 ```console
-nmap -p- localhost
-```
+root@root:~# nmap -F localhost
 
-__Port range__
-```console
-nmap -p 0-65535 localhost
 ```
 
 ### Different Ping Scans
@@ -283,13 +236,143 @@ nmap -PU 127.0.0.1
 __TCP ping Scan__
 ```console
 nmap -P 127.0.0.1
+
+
 ```
+
+
+
+__Nmap Protocol Scan__
+```console
+nmap -sO 127.0.0.1
+```
+
+
+__Nmap DNS lookup Scan__
+```console
+nmap -sL 127.0.0.1
+```
+
+__Nmap Never DNS lookup Scan__
+```console
+nmap -n 127.0.0.1
+```
+
+
+### Wildcards
+
+The targets can be specified in 3 different ways
+
+- Wildcards -- 192.168.43.*
+- Range     -- 192.168.0-255.0-255
+- CIDR      -- 192.168.0.0/16
+
+### Options:
+
+```console
+nmap 192.168.43.*
+```
+```console
+nmap 192.168.43.0-255
+```
+```console
+nmap 192.168.43.0/10
+```
+
+
+
+### Other Options:
+
+
+__Randomize Hosts while scanning__
+```console
+root@root:~# nmap 192.168.43.200-239 --randomize_hosts -f
+```
+
+__Specify Network Interface__
+```console
+root@root:~# nmap 192.168.43.200-239 --randomize_hosts -f
+```
+
+
+__Nmap Use packets fragmentation__
+```console
+root@root:~# nmap 192.168.43.239 -f
+```
+
+
+__Nmap Verbose__
+```console
+root@root:~# nmap 192.168.43.239 -v
+```
+
+__Nmap Very Verbose__
+```console
+root@root:~# nmap 192.168.43.239 -vv
+```
+
+__Nmap show Reason__
+```console
+root@root:~# nmap 192.168.43.239 -p80,21 --open --reason
+```
+
+__To exclude the Host__
+```console
+nmap 127.0.0.1-255 --exclude 127.0.0.1
+```
+__Input list__
+```console
+nmap 127.0.0.1-255 -iL hosts.txt
+```
+
+__Exclude the range of ip addresses__
+```console
+nmap 127.0.0.1-255 --excludefile hosts.list
+```
+
+
+## Script Engine
+
+__Simple Script scan__
+
+```console
+nmap 192.168.43.* --script script-name
+```
+
+
+
+__Default Script scan__
+
+```console
+nmap 192.168.43.* -sC script-name
+```
+
+
+__Catogary Script scan__
+
+```console
+nmap 192.168.43.* --script safe|intrusive|malware|version|discovery|vuln|auth|default
+```
+
+
+
 ### Ports
 
 __Top 1000 Ports__
 
 ```console
 nmap 192.168.43.*
+```
+
+
+__All ports__
+```console
+nmap -p- localhost
+```
+
+__Port range__
+```console
+nmap -p 0-65535 localhost
 ```
 
 
@@ -315,13 +398,45 @@ root@root:~# nmap 192.168.43.239 -p- --open
 
 
 
-__ __
+
+
+## Logging
+
+_Nmap Simple Human Normal Output __
+
+```console
+root@root:~# nmap 192.168.43.239 -p- -oN output.file
+
+```
+
+
+_Nmap Simple XML Redeable Output __
+
+```console
+root@root:~# nmap 192.168.43.239 -p- -oX output.file
+```
+
+
+_Nmap Simple Grepabel Output __
+
+```console
+root@root:~# nmap 192.168.43.239 -p- -oG output.file
+
+```
+
+
+_Nmap Simple All Output __
+
+```console
+root@root:~# nmap 192.168.43.239 -p- -oA output.file
+
+```
+
+
+_Nmap Resume Saved Scan__
 
 ```console
 ```
-```console
-```
----
 
 
 __ __
