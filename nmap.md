@@ -130,7 +130,7 @@ root@root:~# nmap -sU localhost
 
 
 
-__Nmap OS scan __
+__Nmap OS scan__
 ```console
 root@root:~# nmap -p80 -O localhost
 
@@ -146,7 +146,7 @@ root@root:~# nmap -sV -p80 localhost
 
 
 
-__Dont ping just Scan __
+__Dont ping just Scan__
 ```console
 
 root@root:~# nmap -PN -p80 localhost
@@ -402,7 +402,7 @@ root@root:~# nmap 192.168.43.239 -p- --open
 
 ## Logging
 
-_Nmap Simple Human Normal Output __
+_Nmap Simple Human Normal Output__
 
 ```console
 root@root:~# nmap 192.168.43.239 -p- -oN output.file
@@ -410,14 +410,14 @@ root@root:~# nmap 192.168.43.239 -p- -oN output.file
 ```
 
 
-_Nmap Simple XML Redeable Output __
+_Nmap Simple XML Redeable Output__
 
 ```console
 root@root:~# nmap 192.168.43.239 -p- -oX output.file
 ```
 
 
-_Nmap Simple Grepabel Output __
+_Nmap Simple Grepabel Output__
 
 ```console
 root@root:~# nmap 192.168.43.239 -p- -oG output.file
@@ -425,7 +425,7 @@ root@root:~# nmap 192.168.43.239 -p- -oG output.file
 ```
 
 
-_Nmap Simple All Output __
+_Nmap Simple All Output__
 
 ```console
 root@root:~# nmap 192.168.43.239 -p- -oA output.file
