@@ -187,7 +187,7 @@ root@root:~# nmap -sX localhost
 
 ```
 
-__Nmap Null Scan__ (send packets will all flags turned off)
+__Nmap Fast Mode__ (Top 100 Ports)
 ```console
 root@root:~# nmap -F localhost
 
@@ -383,11 +383,37 @@ nmap -p 0-65535 localhost
 ```
 
 
+__All from 1-3__
+```console
+nmap 192.168.43.* -p1-3
+
+
+__All from 1-3__
+```console
+nmap 192.168.43.* -p-3
+```
+
+
+
+__All from 1 to all__
+```console
+nmap 192.168.43.* -p1-
+```
+
 __Specific Ports__
 
 ```console
 nmap 192.168.43.1/24 -p 80
 ```
+
+
+__Top Ports__
+
+```console
+nmap 192.168.43.1/24 --top-ports 500 80
+```
+
+
 
 __TCP and UDP Ports__
 
@@ -404,7 +430,12 @@ root@root:~# nmap 192.168.43.239 -p- --open
 ```
 
 
+__Mixed Style__
 
+```console
+root@root:~# nmap 192.168.43.239 -p80,21-25,8080-8090 --open
+
+```
 
 
 ## Logging
@@ -440,7 +471,65 @@ root@root:~# nmap 192.168.43.239 -p- -oA output.file
 ```
 
 
+## Os detection
+_Nmap OS detection needs atleast one Open port and One closed Port on the machine.
+
+__default os scan__
+```console
+nmap -O 192.168.43.239
+```
+
+__Limit Os scan__(Dont waste too much time if you are not able to detect OS)
+```console
+nmap -O --osscan-limit 192.168.43.239
+```
+
+
+__Aggresive Os scan__(Spend too much time if you are not able to detect OS)
+```console
+nmap -O --osscan-guess 192.168.43.239
+```
+
+__ __
+```console
+
+```
+
+__ __
+```console
+
+```
+
+__ __
+```console
+
+```
+
 ### How it works
+
+#### How OS detection Works
+> There is an file `/usr/share/nmap/nmap-os-db` which contain the patterns like this
+
+```
+CPE cpe:/h:2wire:1701hg
+SEQ(SP=7E-9A%GCD=1-6%ISR=9E-A8%TI=I%TS=A)
+OPS(O1=M5ACNNSW0NNNT11%O2=M578NNSW0NNNT11%O3=M280W0NNNT11%O4=M218NNSW0NNNT11%O5=M218NNSW0NNNT11%O6=M109NNSNNT11)
+WIN(W1=8000%W2=8000%W3=8000%W4=8000%W5=8000%W6=8000)
+ECN(R=Y%DF=Y%T=FA-104%TG=FF%W=8000%O=M5ACNNSW0N%CC=N%Q=)
+T1(R=Y%DF=Y%T=FA-104%TG=FF%S=O%A=O|S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=Y%DF=Y%T=FA-104%TG=FF%W=0%S=A%A=Z%F=R%O=%RD=E44A4E43%Q=)
+T5(R=Y%DF=Y%T=FA-104%TG=FF%W=0%S=Z%A=S+%F=AR%O=%RD=BD1AB510%Q=)
+T6(R=Y%DF=Y%T=FA-104%TG=FF%W=0%S=A%A=Z%F=R%O=%RD=EA6C967D%Q=)
+T7(R=N)
+U1(DF=Y%T=FA-104%TG=FF%IPL=70%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+```
+
+
+
+
+
 
 #### How nmap Detect Services
 
@@ -553,7 +642,6 @@ You can have a look at on the server that direct connection was made by nmap for
 
 ```
 
-__Nmap Resume Saved Scan__
+## Tip
+> Use `diff` Linux command to see if there is any new service or host detected in the network
 
-```console
-```
