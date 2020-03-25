@@ -259,6 +259,14 @@ nmap -n 127.0.0.1
 ```
 
 
+__Nmap Traceroute Scan__
+```console
+nmap --traceroute google.com
+```
+
+
+
+
 ### Wildcards
 
 The targets can be specified in 3 different ways
@@ -402,7 +410,7 @@ root@root:~# nmap 192.168.43.239 -p- --open
 
 ## Logging
 
-_Nmap Simple Human Normal Output__
+__Nmap Simple Human Normal Output__
 
 ```console
 root@root:~# nmap 192.168.43.239 -p- -oN output.file
@@ -410,14 +418,14 @@ root@root:~# nmap 192.168.43.239 -p- -oN output.file
 ```
 
 
-_Nmap Simple XML Redeable Output__
+__Nmap Simple XML Redeable Output__
 
 ```console
 root@root:~# nmap 192.168.43.239 -p- -oX output.file
 ```
 
 
-_Nmap Simple Grepabel Output__
+__Nmap Simple Grepabel Output__
 
 ```console
 root@root:~# nmap 192.168.43.239 -p- -oG output.file
@@ -425,7 +433,7 @@ root@root:~# nmap 192.168.43.239 -p- -oG output.file
 ```
 
 
-_Nmap Simple All Output__
+__Nmap Simple All Output__
 
 ```console
 root@root:~# nmap 192.168.43.239 -p- -oA output.file
@@ -433,52 +441,7 @@ root@root:~# nmap 192.168.43.239 -p- -oA output.file
 ```
 
 
-_Nmap Resume Saved Scan__
+__Nmap Resume Saved Scan__
 
 ```console
 ```
-
-
-__ __
-
-```console
-```
-```console
-```
----
-
-
-__ __
-
-```console
-```
-```console
-```
----
-
-
-__ __
-
-```console
-```
-```console
-```
----
-
-
-__ __
-
-```console
-```
-```console
-```
----
-
-
-__ __
-
-```console
-```
-```console
-```
----
