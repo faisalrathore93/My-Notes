@@ -266,7 +266,6 @@ nmap --traceroute google.com
 
 
 
-
 ### Wildcards
 
 The targets can be specified in 3 different ways
@@ -439,6 +438,56 @@ __Nmap Simple All Output__
 root@root:~# nmap 192.168.43.239 -p- -oA output.file
 
 ```
+
+
+### How it works
+
+#### How nmap Detect Services
+
+> There is an file `/usr/share/nmap/nmap-services` which contain the list of port number and an expected services on those port
+```
+vettcp	78/tcp	0.000000
+vettcp	78/udp	0.000626
+finger	79/tcp	0.006022
+finger	79/udp	0.000956
+http	80/sctp	0.000000	# www-http | www | World Wide Web HTTP
+http	80/tcp	0.484143	# World Wide Web HTTP
+http	80/udp	0.035767	# World Wide Web HTTP
+hosts2-ns	81/tcp	0.012056	# HOSTS2 Name Server
+hosts2-ns	81/udp	0.001005	# HOSTS2 Name Server
+xfer	82/tcp	0.002923	# XFER Utility
+xfer	82/udp	0.000659	# XFER Utility
+mit-ml-dev	83/tcp	0.000539	# MIT ML Device
+mit-ml-dev	83/udp	0.001203	# MIT ML Device
+ctf	84/tcp	0.000276	# Common Trace Facility
+ctf	84/udp	0.000610	# Common Trace Facility
+mit-ml-dev	85/tcp	0.000690	# MIT ML Device
+mit-ml-dev	85/udp	0.000610	# MIT ML Device
+mfcobol	86/tcp	0.000138	# Micro Focus Cobol
+
+```
+
+So even starting an `HTTP server` on port `3306` will result showing up `Mysql` detected by `Nmap`.
+
+```console
+root@root:~# python -m SimpleHTTPServer 3306
+Serving HTTP on 0.0.0.0 port 3306 ...
+
+```
+
+```console
+root@root:~# nmap localhost
+Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-24 19:22 HDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000060s latency).
+Other addresses for localhost (not scanned): ::1
+Not shown: 998 closed ports
+PORT     STATE SERVICE
+80/tcp   open  http
+3306/tcp open  mysql
+
+```
+
 
 
 __Nmap Resume Saved Scan__
