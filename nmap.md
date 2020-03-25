@@ -490,6 +490,33 @@ PORT     STATE SERVICE
 
 But using `-sV` scan flag will actually force nmap to communicate to the server and detect the service 
 
+> There is an aother file called `/usr/share/nmap/nmap-service-probes` which containes the regular expression to detect services based on the response 
+
+Let search `SimpleHTTPServer` in the file
+
+```console
+root@root:/usr/share/nmap# cat nmap-service-probes  | grep SimpleHTTPServer
+match http m|^HTTP/1\.0 501 Not Implemented\r\nServer: SimpleHTTP/([\w._-]+) Python/([\w._-]+)\r\n.*Content-Type: text/html\r\nConnection: close\r\n\r\n<head>\n<title>Error response</title>\n</head>\n<body>\n<h1>Error response</h1>\n<p>Error code 501\.\n<p>Message: Not Implemented\.\n<p>Error code explanation: 501 = Server does not support this operation\.\n</body>\n$|s p/SimpleHTTPServer/ v/$1/ i/rPath Appliance Platform Agent; Python $2/ cpe:/a:python:python:$2/ cpe:/a:python:simplehttpserver:$1/
+match http m|^HTTP/1\.0 200 OK\r\nServer: SimpleHTTP/([\d.]+) Python/([\d.]+)\r\n| p/SimpleHTTPServer/ v/$1/ i/Python $2/ cpe:/a:python:python:$2/ cpe:/a:python:simplehttpserver:$1/
+
+```
+
+You can see that if `^HTTP/1\.0 200 OK\r\nServer: SimpleHTTP/([\d.]+)` is matched with any of the response it will be marked as http. 
+
+So i tried to communicate with the SimpleHTTPServer with Curl to see the response Here is what i saw
+
+```http
+root@root:/usr/share/nmap# curl -I localhost:3306
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/2.7.15+
+Date: Wed, 25 Mar 2020 04:42:01 GMT
+Content-type: text/html; charset=UTF-8
+Content-Length: 3614
+
+
+```
+You can see the ` SimpleHTTP/0.6` matching `SimpleHTTP/([\d.]+)` Regex which confimed nmap that its an http service.
+
 
 ```console
 root@root:~# nmap -sV localhost
