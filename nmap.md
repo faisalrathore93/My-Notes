@@ -488,7 +488,43 @@ PORT     STATE SERVICE
 
 ```
 
+But using `-sV` scan flag will actually force nmap to communicate to the server and detect the service 
 
+
+```console
+root@root:~# nmap -sV localhost
+Starting Nmap 7.70 ( https://nmap.org ) at 2020-03-24 19:27 HDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000030s latency).
+Other addresses for localhost (not scanned): ::1
+Not shown: 998 closed ports
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    Apache httpd 2.4.34
+3306/tcp open  caldav  Radicale calendar and contacts server (Python BaseHTTPServer)
+Service Info: Host: 127.0.0.1
+```
+
+You can have a look at on the server that direct connection was made by nmap for detecting services
+```console
+127.0.0.1 - - [24/Mar/2020 19:27:57] code 400, message Bad request syntax ('\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03')
+127.0.0.1 - - [24/Mar/2020 19:27:57] "versionbind" 400 -
+127.0.0.1 - - [24/Mar/2020 19:28:02] code 400, message Bad HTTP/0.9 request type ('\x00')
+127.0.0.1 - - [24/Mar/2020 19:28:02] "
+                                      " 400 -
+127.0.0.1 - - [24/Mar/2020 19:28:02] code 400, message Bad request syntax ('HELP')
+127.0.0.1 - - [24/Mar/2020 19:28:02] "HELP" 400 -
+127.0.0.1 - - [24/Mar/2020 19:28:02] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [24/Mar/2020 19:28:02] code 404, message File not found
+127.0.0.1 - - [24/Mar/2020 19:28:02] "GET /nmaplowercheck1585110482 HTTP/1.1" 404 -
+127.0.0.1 - - [24/Mar/2020 19:28:02] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [24/Mar/2020 19:28:02] "POST /sdk HTTP/1.1" 501 -
+127.0.0.1 - - [24/Mar/2020 19:28:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Mar/2020 19:28:02] code 404, message File not found
+127.0.0.1 - - [24/Mar/2020 19:28:02] "GET /HNAP1 HTTP/1.1" 404 -
+127.0.0.1 - - [24/Mar/2020 19:28:02] code 404, message File not found
+127.0.0.1 - - [24/Mar/2020 19:28:02] "GET /evox/about HTTP/1.1" 404 -
+
+```
 
 __Nmap Resume Saved Scan__
 
