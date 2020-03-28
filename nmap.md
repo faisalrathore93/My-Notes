@@ -471,13 +471,22 @@ root@root:~# nmap 192.168.43.239 -p- -oA output.file
 ```
 
 
-## Os detection
+## Os and Version detectio
 _Nmap OS detection needs atleast one Open port and One closed Port on the machine.
 
 __default os scan__
 ```console
 nmap -O 192.168.43.239
 ```
+
+
+
+__Nmap Service Detection__
+```console
+root@root:~# nmap -sV -p80 localhost
+
+```
+
 
 __Limit Os scan__(Dont waste too much time if you are not able to detect OS)
 ```console
@@ -489,6 +498,19 @@ __Aggresive Os scan__(Spend too much time if you are not able to detect OS)
 ```console
 nmap -O --osscan-guess 192.168.43.239
 ```
+
+__Version Intensity__ (level=1,2,3,4,5,7,8,9)
+```console
+nmap 192.168.43.239 --version-intensity <level> 
+```
+
+
+
+__High Version Intensity__ (level=9)
+```console
+nmap 192.168.43.239 --version-all 
+```
+
 
 
 ## Performance
