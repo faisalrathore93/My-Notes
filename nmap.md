@@ -290,6 +290,15 @@ nmap 192.168.43.0/10
 
 ### Other Options:
 
+__Nmap debug mode__
+```console
+nmap -p80 localhost -d
+```
+
+__Nmap More debug mode__
+```console
+nmap -p80 localhost -ddd
+```
 
 __Randomize Hosts while scanning__
 ```console
@@ -440,6 +449,13 @@ root@root:~# nmap 192.168.43.239 -p80,21-25,8080-8090 --open
 
 ## Logging
 
+__Show All packets Send and Receaved__
+```console
+nmap localhost --packet-trace
+```
+
+
+
 __Nmap Simple Human Normal Output__
 
 ```console
@@ -528,15 +544,85 @@ nmap 192.168.43.0-255 --max-parallelism 10
 ```
 
 
-__Host Timeout__
+__Host Timeout__(give up on this target after this time default:30min)
 ```console
-nmap 192.168.43.0-255 --host-time
+nmap 192.168.43.0-255 --host-time <time>
 ```
 
-__ __
+__Min Packet Rate__(rate can be 1-100000000000)
 ```console
+nmap 192.168.43.0-255 --min-rate <Number>
+```
+
+
+__Max Packet Rate__(rate can be 1-100000000000)
+```console
+nmap 192.168.43.0-255 --max-rate <Number>
+```
+
+__Scan delay__(Adjust delay between probes)
+```console
+nmap 192.168.43.0-255 --scan-delay <time>
+```
+__Performance template__(-T(1|2|3|4|5)
+```console
+nmap 192.168.43.0-255 -T1
+```
+
+__T1__
+```console
+  hostgroups: min 1, max 100000
+  rtt-timeouts: init 15000, min 100, max 15000
+  max-scan-delay: TCP 1000, UDP 1000, SCTP 1000
+  parallelism: min 0, max 1
+  max-retries: 10, host-timeout: 0
+  min-rate: 0, max-rate: 0
 
 ```
+
+__T2__
+```console
+  hostgroups: min 1, max 100000
+  rtt-timeouts: init 1000, min 100, max 10000
+  max-scan-delay: TCP 1000, UDP 1000, SCTP 1000
+  parallelism: min 0, max 1
+  max-retries: 10, host-timeout: 0
+  min-rate: 0, max-rate: 0
+
+```
+
+__T3__
+```console
+  hostgroups: min 1, max 100000
+  rtt-timeouts: init 1000, min 100, max 10000
+  max-scan-delay: TCP 1000, UDP 1000, SCTP 1000
+  parallelism: min 0, max 0
+  max-retries: 10, host-timeout: 0
+  min-rate: 0, max-rate: 0
+
+```
+
+__T4__
+```console
+  hostgroups: min 1, max 100000
+  rtt-timeouts: init 500, min 100, max 1250
+  max-scan-delay: TCP 10, UDP 1000, SCTP 10
+  parallelism: min 0, max 0
+  max-retries: 6, host-timeout: 0
+  min-rate: 0, max-rate: 0
+
+```
+
+__T5__
+```console
+  hostgroups: min 1, max 100000
+  rtt-timeouts: init 250, min 50, max 300
+  max-scan-delay: TCP 5, UDP 1000, SCTP 5
+  parallelism: min 0, max 0
+  max-retries: 2, host-timeout: 900000
+  min-rate: 0, max-rate: 0
+```
+
 
 ### How it works
 
@@ -678,3 +764,5 @@ You can have a look at on the server that direct connection was made by nmap for
 ## Tip
 > Use `diff` Linux command to see if there is any new service or host detected in the network
 
+> Pending
+<http://www.irongeek.com/i.php?page=videos/nmap-class-hfc-louisville-issa&mode=print>
