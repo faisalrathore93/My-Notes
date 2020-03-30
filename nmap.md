@@ -363,7 +363,7 @@ nmap 192.168.43.* --script safe|intrusive|malware|version|discovery|vuln|auth|de
 
 
 
-### Ports
+## Ports
 
 __Top 1000 Ports__
 
@@ -515,14 +515,22 @@ nmap 192.168.43.239 --version-all
 
 ## Performance
 
-__ __
+__Min Parallelism__(minimum hosts to be scanned parallely)
 ```console
+nmap 192.168.43.0-255 --min-parallelism 10
 
 ```
 
-__ __
+__Max Parallelism__(Maximum hosts to be scanned parallely)
 ```console
+nmap 192.168.43.0-255 --max-parallelism 10
 
+```
+
+
+__Host Timeout__
+```console
+nmap 192.168.43.0-255 --host-time
 ```
 
 __ __
