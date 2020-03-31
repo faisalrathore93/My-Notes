@@ -1,4 +1,2 @@
-[
 {"target":"http://links.typeform.tf","http_status":403,"request_config":{"headers":{"User-Agent":"WhatWeb/0.5.1"}},"plugins":{"Title":{"string":["403 Forbidden"]},"IP":{"string":["23.21.234.98"]},"Country":{"string":["UNITED STATES"],"module":["US"]},"nginx":{},"HTTPServer":{"string":["nginx"]}}}
-]
 
