@@ -1,6 +1,6 @@
-## Python Requests
+# Python Requests
 
-### Get request
+## Get request
 
 ```python
 import requests
