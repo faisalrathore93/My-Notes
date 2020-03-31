@@ -25,7 +25,8 @@ r=requests.get('http://192.168.64.2/python/file.txt');
 print(r.content);
 ```
 
-__Output:__
+Output:
+
 ```console
 b'i am a text file\nasdasd\nasdasd\nasdas \n'
 
@@ -41,7 +42,8 @@ r=requests.get('http://192.168.64.2/python/file.txt');
 print(r.is_redirect);
 ```
 
-__Output:__
+Output:
+
 ```console
 False
 
@@ -57,7 +59,8 @@ r=requests.get('http://192.168.64.2/python/file.php');
 print(r.ok);
 ```
 
-__Output:__
+Output:
+
 ```console
 True
 
@@ -73,7 +76,8 @@ r=requests.get('http://192.168.64.2/python/file.php');
 print(r.text);
 ```
 
-__Output:__
+Output:
+
 ```console
 [
 {"target":"http://links.typeform.tf","http_status":403,"request_config":{"headers":{"User-Agent":"WhatWeb/0.5.1"}},"plugins":{"Title":{"string":["403 Forbidden"]},"IP":{"string":["23.21.234.98"]},"Country":{"string":["UNITED STATES"],"module":["US"]},"nginx":{},"HTTPServer":{"string":["nginx"]}}}
