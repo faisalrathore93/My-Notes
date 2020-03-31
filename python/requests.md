@@ -18,16 +18,6 @@ r=requests.get('http://192.168.64.2/python/file.txt');
 print(r);
 ```
 
-## Get parameters
-```python
-import requests
-
-
-parameters={"name":"imran","age":"21"}
-r=requests.get("https://raw.githubusercontent.com/imran-parray/My-Notes/master/ssh.md",params=parameters);
-print(r.url)
-```
-
 
 
 ## POST request
@@ -39,6 +29,17 @@ r=requests.POST('http://192.168.64.2/python/file.txt');
 print(r);
 ```
 
+
+
+## Get/POST parameters
+```python
+import requests
+
+
+parameters={"name":"imran","age":"21"}
+r=requests.get("https://raw.githubusercontent.com/imran-parray/My-Notes/master/ssh.md",params=parameters);
+print(r.url)
+```
 
 
 ## Response Object Method
