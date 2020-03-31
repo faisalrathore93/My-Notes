@@ -1,6 +1,8 @@
 ## Python Requests
 
-### Get request```python
+### Get request
+
+```python
 import requests
 
 r=requests.get('http://192.168.64.2/python/file.txt');
