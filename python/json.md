@@ -44,109 +44,24 @@ print(type(string_data2))                       //<class 'str'>
 __Beautifying json__
 ```python
 json.dump(top, fh2,indent=2)                 // When Writing to Files
-print(json_data,indent=2)                   // When printing to screen
-
-
 ```
 
-____
+__API to File__
 ```python
+import json
+import requests
 
+url='https://crt.sh/?q=%.typeform.tf&output=json'
 
-```
+resp=requests.get(url)
+json_data=resp.json()
+print(json_data)
+print(type(json_data))
+domains=''
+for domain in json_data:
+	domains=domains+domain['name_value']+'\n'
 
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
-
-```
-
-____
-```python
-
+with open('subdomains.txt','w') as fh:
+	fh.write(domains)
 
 ```
